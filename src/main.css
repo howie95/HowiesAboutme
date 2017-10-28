@@ -5,8 +5,14 @@ body {
     height: 100%;
     font-size: 20px;
     overflow: hidden;
-    background-color: rgb(240, 246, 248);
-    font-family: PingFang SC,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;    
+    /* background-color: rgb(240, 246, 248); */
+    background-color: #f8f8f0;
+    font-family: PingFang SC,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);    
 }
 
 .navbar {
@@ -248,10 +254,89 @@ body {
     height: 13rem;
     background-color: greenyellow;
 }
-.pages .pagecontent3 .works .workinfo {
+.pages .pagecontent3 .works>div {
     float: right;
     width: 18rem;
     height: 13rem;
+}
+.workinfo5 {
+    background-color: #010005;
+}
+.workinfo5 h2,.workinfo5 p {
+    color: white;
+    font-weight: 300;
+}
+
+#page4 {
+    background: none;
+    box-shadow: none;
+}
+.pages .pagecontent4 {
+    width: 60rem;
+    height: 28rem;
+}
+.pages .pagecontent4 .mylinks {
+    display: flex;
+    justify-content: space-between;
+    width: 60rem;
+    height: 23rem;  
+}
+.pages .pagecontent4 .mylinks .link {
+    width: 18rem;
+    height: 23rem;
+    border-radius: 1.5rem;
+}
+.pages .pagecontent4 .mylinks .link .linkicon {
+    width: 18rem;
+    height: 17rem;
+}
+.pages .pagecontent4 .mylinks .link .linkinfo {
+    width: 18rem;
+    height: 6rem;
+    text-align: center;
+}
+.pages .pagecontent4 .mylinks .link .linkinfo h2 {
+    font-weight: 300;
+    color: white;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+.pages .pagecontent4 .mylinks .link .linkinfo p {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-size: 1rem;
+}
+.pages .pagecontent4 .mylinks .link1 {
+    background-image: linear-gradient(60deg, #d183ff 0%,#6db9f0 50%, #0aefe2 100%);
+    box-shadow: 5px 10px 25px rgba(100, 190, 239, 0.3);
+}
+.pages .pagecontent4 .mylinks .link2 {
+    background-image: linear-gradient(60deg, #ff599e 0%, #f9748f 19%, #ffab68 100%);
+    box-shadow: 5px 10px 25px rgba(255, 157, 154, 0.3);
+}
+.pages .pagecontent4 .mylinks .link3 {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.pages .pagecontent4 .otherlinks {
+    display: flex;
+    justify-content: space-between;
+    width: 60rem;
+    height: 3rem;
+    margin-top: 2rem;
+}
+.pages .pagecontent4 .otherlinks a {
+    text-align: center;
+    text-decoration: none;
+    line-height: 3rem;
+    font-size: 1rem;
+    color: rgb(160, 160, 160);
+    width: 18rem;
+    height: 3rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -404,6 +489,12 @@ body {
     font-size: 10rem;
     color:#e8ffbd;
 }
+.bg2cat {
+    width: 100rem;
+    position: absolute;
+    top: -10rem;
+    left: 50rem;
+}
 
 .bg3 .block1{
     position: absolute;
@@ -449,4 +540,48 @@ body {
     height: 20rem;
     transform:rotate(20deg);
     background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
+}
+
+.cat .cls-1 {
+    fill: #f7931e;
+}
+.cat .cls-2 {
+    fill: #ffa64d;
+}
+.cat .cls-3 {
+    fill: #ffd3ab;
+}
+.cat .cls-4 {
+    fill: #fbb03b;
+}
+.cat .cls-5 {
+    fill: #fff;
+}
+.cat .cls-6 {
+    fill: #c1272d;
+}
+.cat .cls-7 {
+    fill: #f15a24;
+}
+#wool .cls-1,#woolline .cls-1 {
+    fill: #ffecc6;
+}
+#wool .cls-2 {
+    fill: #fcd39c;
+}
+.bg4 .leftcat {
+    width: 100rem;
+    position: absolute;
+    left: -30rem;
+}
+.bg4 #wool {
+    width: 30rem;
+    position: absolute;
+    top: 10rem;
+    right: 10rem;
+}
+.bg4 #woolline {
+    width: 15rem;
+    position: absolute;
+    right: 5rem;
 }

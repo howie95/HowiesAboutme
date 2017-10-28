@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
-        currect:1,
+        currect:2,
         navtrans:'navright',
         pagetrans:'pageup',
         scrollLock:false,
