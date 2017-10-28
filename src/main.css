@@ -6,6 +6,7 @@ body {
     font-size: 20px;
     overflow: hidden;
     background-color: rgb(240, 246, 248);
+    font-family: PingFang SC,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;    
 }
 
 .navbar {
@@ -140,9 +141,9 @@ body {
 }
 .pages .pagecontent2 .abicon{
     background-color: blue;
-    width: 6rem;
-    height: 6rem;
-    border-radius: 3rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
 }
 .pages .pagecontent2 .abinfo{
     width: 20rem;
@@ -158,23 +159,51 @@ body {
     color: #85a6b1;
     font-size: 1rem;
 }
+@keyframes abifade {
+    from{opacity: 0};
+    to{opacity: 1}
+}
+.pages .ability1 {
+    animation: abifade 1s backwards .2s;
+}
+.pages .ability2 {
+    animation: abifade 1s backwards .3s;
+}
+.pages .ability3 {
+    animation: abifade 1s backwards .4s;
+}
+.pages .ability4 {
+    animation: abifade 1s backwards .5s;
+}
+.pages .ability5 {
+    animation: abifade 1s backwards .6s;
+}
+.pages .ability6 {
+    animation: abifade 1s backwards .7s;
+}
 .pages .ability1 .abicon{
-    background-color: #e2ecef;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    box-shadow: 5px 5px 25px rgba(254, 212, 75, 0.4);
 }
 .pages .ability2 .abicon{
-    background-color: #efe2e8;
+    background-image: linear-gradient(to right, #f5576c 0%,  #f093fb 100%);
+    box-shadow: 5px 5px 25px rgba(240, 147, 251, 0.4);
 }
 .pages .ability3 .abicon{
-    background-color: #026e00;
+    background-image: linear-gradient(to right, #0ba360 0%, #3cba92 100%);
+    box-shadow: 5px 5px 25px rgba(60, 186, 14, 0.4);
 }
 .pages .ability4 .abicon{
-    background-color: #efebe2;
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    box-shadow: 5px 5px 25px rgba(56, 249, 215, 0.4);
 }
 .pages .ability5 .abicon{
-    background-color: #001d26;
+    background-image: linear-gradient(to right, #8989ba 0%, #8989ba 52%, #a7a6cb 100%);
+    box-shadow: 5px 5px 25px rgba(137, 137, 186, 0.4);
 }
 .pages .ability6 .abicon{
-    background-color: #fdcfcf;
+    background-image: linear-gradient(to right, #ff0844 0%, #ffb199 100%);
+    box-shadow: 5px 5px 25px rgba(255, 177, 153, 0.4);
 }
 .pages .abicon span{
     display: block;
@@ -205,12 +234,24 @@ body {
     color: #ff367f;
 }
 .pages .pagecontent3 .works {
+    overflow: hidden;
     margin-bottom: 3rem;
     width: 58rem;
     height: 13rem;
     background-color: white;
     border-radius: 1rem;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.pages .pagecontent3 .works img {
+    display: inline-block;
+    width: 40rem;
+    height: 13rem;
+    background-color: greenyellow;
+}
+.pages .pagecontent3 .works .workinfo {
+    float: right;
+    width: 18rem;
+    height: 13rem;
 }
 
 

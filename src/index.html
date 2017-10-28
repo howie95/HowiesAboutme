@@ -52,7 +52,7 @@
             <div class="pages">
                 <transition :name="pagetrans">
                     <div id="page1" class="page" v-show="currect == 1">
-                        <div class="pagecontent1">
+                        <div class="pagecontent pagecontent1">
                             <h1>1邀请好友一起重温旧日时光吧！</h1>
                             <p>假期临近，Xbox 阵营视乎没有甚么太大的动作？并不是了，因为他们准备了让他们的粉丝重新投入美好的从前！一系列在 2000 年代大热的 Xbox 游戏将会在明天开始陆续上架，让各位手执 Xbox One 新主机的玩家都可以回味老游戏。以下是首先登场的 13 款游戏：BlackBloodRayne 2（吸血莱恩 2）Crimson Skies: High Road to Revenge（王牌飞行员：复仇大道） Dead to Rights（绝命战警）Fuzion Frenzy（疯狂大乱斗）Grabbed by the Ghoulies（鬼屋大冒险）The King of Fighters：NeoWave（拳皇 NEOWAVE）Ninja Gaiden：Black（忍者外传：黑之章）Prince of Persia：The Sands of Time（波斯王子：时之砂）Psychonauts（疯狂世界）Red Faction II（赤色战线：游击战队）Sid Meier's Pirates! （Sid Meier's 大海盗！）Star Wars：Knights of the Old Republic（星际大战：旧共和国的武士）如果玩家还有藏着这些老游戏的光碟，只要放进 Xbox One 里就能运行。没有也不打紧，因为 Xbox Store 上也有上架，下载每款游戏只要 10 美元。这些游戏大多都有个叫人怀念的好功能，就是支持单机的多人游戏模式，正好适合假期期间邀请好友到来一起重温旧日时光。而且画质也会从以前的 480p 提升至 1080p，部分游戏像是 Ninja Gaiden Black 更会支持 16:9 显示。假期临近，Xbox 阵营视乎没有甚么太大的动作？并不是了，因为他们准备了让他们的粉丝重新投入美好的从前！一系列在 2000 年代大热的 Xbox 游戏将会在明天开始陆续上架，让各位手执 Xbox One 新主机的玩家都可以回味老游戏。以下是首先登场的 13 款游戏：BlackBloodRayne 2（吸血莱恩 2）Crimson Skies: High Road to Revenge（王牌飞行员：复仇大道） Dead to Rights（绝命战警）Fuzion Frenzy（疯狂大乱斗）Grabbed by the Ghoulies（鬼屋大冒险）The King of Fighters：NeoWave（拳皇 NEOWAVE）Ninja Gaiden：Black（忍者外传：黑之章）Prince of Persia：The Sands of Time（波斯王子：时之砂）Psychonauts（疯狂世界）Red Faction II（赤色战线：游击战队）Sid Meier's Pirates! （Sid Meier's 大海盗！）Star Wars：Knights of the Old Republic（星际大战：旧共和国的武士）如果玩家还有藏着这些老游戏的光碟，只要放进 Xbox One 里就能运行。没有也不打紧，因为 Xbox Store 上也有上架，下载每款游戏只要 10 美元。这些游戏大多都有个叫人怀念的好功能，就是支持单机的多人游戏模式，正好适合假期期间邀请好友到来一起重温旧日时光。而且画质也会从以前的 480p 提升至 1080p，部分游戏像是 Ninja Gaiden Black 更会支持 16:9 显示
                             </p>
@@ -61,10 +61,9 @@
                 </transition>
                 <transition :name="pagetrans">
                     <div id="page2" class="page" v-show="currect == 2">
-                        <div class="pagecontent2">
+                        <div class="pagecontent pagecontent2">
                             <div class="ability1">
                                 <div class="abicon">
-                                    <span style="color:#e23535">H</span>
                                 </div>
                                 <div class="abinfo">
                                     <h2>HTML+CSS</h2>
@@ -73,7 +72,6 @@
                             </div>
                             <div class="ability2">
                                 <div class="abicon">
-                                    <span style="color:#e98cd3">J</span>
                                 </div>
                                 <div class="abinfo">
                                     <h2>JAVASCRIPT</h2>
@@ -82,7 +80,6 @@
                             </div>
                             <div class="ability3">
                                 <div class="abicon">
-                                    <span style="color:#241f1f">N</span>
                                 </div>
                                 <div class="abinfo">
                                     <h2>NODEJS</h2>
@@ -91,7 +88,6 @@
                             </div>
                             <div class="ability4">
                                 <div class="abicon">
-                                    <span style="color:#e23535">V</span>
                                 </div>
                                 <div class="abinfo">
                                     <h2>VUEJS</h2>
@@ -100,7 +96,6 @@
                             </div>
                             <div class="ability5">
                                 <div class="abicon">
-                                    <span style="color:#08c9ff">P</span>
                                 </div>
                                 <div class="abinfo">
                                     <h2>PS/AI</h2>
@@ -109,7 +104,6 @@
                             </div>
                             <div class="ability6">
                                 <div class="abicon">
-                                    <span style="color:#e23535">D</span>
                                 </div>
                                 <div class="abinfo">
                                     <h2>DESIGN</h2>
@@ -121,14 +115,44 @@
                 </transition>
                 <transition :name="pagetrans">
                     <div id="page3" class="page" v-show="currect == 3">
-                        <div class="pagecontent3">
+                        <div class="pagecontent pagecontent3">
                             <span>2017</span>
-                            <div class="works"></div>
-                            <div class="works"></div>
-                            <div class="works"></div>
+                            <div class="works">
+                                <img src="" alt="work1">
+                                <div class="workinfo">
+                                    <h2>Lather</h2>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="works">
+                                <img src="" alt="work2">
+                                <div class="workinfo">
+                                    <h2>枕边明月光</h2>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="works">
+                                <img src="" alt="work3">
+                                <div class="workinfo">
+                                    <h2>Vue-TypingIt</h2>
+                                    <p></p>
+                                </div>
+                            </div>
                             <span>2016</span>
-                            <div class="works"></div>
-                            <div class="works"></div>
+                            <div class="works">
+                                <img src="" alt="work4">
+                                <div class="workinfo">
+                                    <h2>19酒商城</h2>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="works">
+                                <img src="./img/work5.jpg" alt="work5">
+                                <div class="workinfo">
+                                    <h2>Roar</h2>
+                                    <p></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </transition>
