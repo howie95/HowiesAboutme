@@ -7,382 +7,368 @@
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
     <script src="https://unpkg.com/vue@2.5.2/dist/vue.js"></script>
+    <script src="./main.js"></script>
 </head>
 <body>
     <div id="app">
-        <div class="navbar">
-            <div class="navbutton" :class="{navactive:currect == 1}" @click="clickNav(1)">
-                <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.97 57.5">
-                    <path d="M60.64,55.67a17.82,17.82,0,1,0-17.28,0A28.7,28.7,0,0,0,24.1,77.12a1.76,1.76,0,0,0-.09.46s0,.08,0,.12a1.78,1.78,0,1,0,3.56,0,25,25,0,0,1,48.84,0,1.78,1.78,0,0,0,3.56,0,28.64,28.64,0,0,0-19.33-22ZM37.74,40A14.26,14.26,0,1,1,52,54.33,14.31,14.31,0,0,1,37.74,40Z" transform="translate(-24 -22)"/>
-                </svg>
-                <span class="navspan">个人介绍</span>
-                <transition :name="navtrans">
-                <div class="navbg navbg1" v-show="currect == 1"></div>
-                </transition>
-            </div>
-            <div class="navbutton" :class="{navactive:currect == 2}" @click="clickNav(2)">
-                <svg class="navicon2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.67 53.7">
-                    <path d="M89.64,48.38a4,4,0,0,0-1-1.41L63.33,24.18a4,4,0,0,0-5.39,6L80,50,58,69.83a4,4,0,1,0,5.39,6L88.67,53a4,4,0,0,0,1-4.65Z" transform="translate(-11.33 -23.15)"/>
-                    <path d="M21.36,50l22-19.84a4,4,0,1,0-5.39-6L12.7,47a4.12,4.12,0,0,0,0,6.07L38,75.82a4,4,0,1,0,5.39-6Z" transform="translate(-11.33 -23.15)"/>
-                </svg>
-                <span class="navspan">能力清单</span>
-                <transition :name="navtrans">
-                <div class="navbg navbg2" v-show="currect == 2"></div>
-                </transition>
-            </div>
-            <div class="navbutton" :class="{navactive:currect == 3}" @click="clickNav(3)">
-                <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58">
-                    <path d="M27.72,75.32A15.48,15.48,0,0,0,38.5,80,11.86,11.86,0,0,0,47,76.6l8.82-8.89.08-.07,0,0h0L74.63,48.72a7.29,7.29,0,0,0,1.84-3.09l4.26-15.42A12.75,12.75,0,0,0,81,28.34,6.35,6.35,0,0,0,74.65,22a12.87,12.87,0,0,0-2.1.34l-15.37,4a7.29,7.29,0,0,0-3.09,1.84L26.43,56.1c-5,5-4.46,13.47,1.29,19.22ZM52,36.87a14.79,14.79,0,0,0,1.3,4.76L36.14,58.77a8.84,8.84,0,0,1,1.79-9.07l0,0,0,0L52,35.52c0,.45,0,.89,0,1.35Zm2.21,6.41a16.41,16.41,0,0,0,2.4,3.13,16.18,16.18,0,0,0,3.7,2.7L43,66.4a12.54,12.54,0,0,1-6.12-5.82l17.3-17.3ZM62,50a14.45,14.45,0,0,0,5.2,1.09l-14,14.07a8.7,8.7,0,0,1-8.31,1.92ZM73.45,25.86a9.11,9.11,0,0,1,1.23-.23,2.73,2.73,0,0,1,2.7,2.72,9,9,0,0,1-.18,1l-1.91,6.91a8.59,8.59,0,0,1-8.58-8.65l6.75-1.77ZM64.91,28.1a10.11,10.11,0,0,0,3,7,10.34,10.34,0,0,0,6.83,3.08L73,44.67a3.55,3.55,0,0,1-.71,1.24c-3.64,2.6-9.23,1.83-13.11-2.05C55,39.75,54.4,33.73,57.57,30.14a3.6,3.6,0,0,1,.65-.28l6.7-1.76ZM29,58.66,32,55.59c0,.41,0,.8,0,1.22A16,16,0,0,0,47.39,71l-3,3a8.26,8.26,0,0,1-5.89,2.33A12.53,12.53,0,0,1,26.65,65.2,8.3,8.3,0,0,1,29,58.66Z" transform="translate(-23 -22)"/>
-                </svg>
-                <span class="navspan">项目、作品</span>
-                <transition :name="navtrans">
-                <div class="navbg navbg3" v-show="currect == 3"></div>
-                </transition>
-            </div>
-            <div class="navbutton" :class="{navactive:currect == 4}" @click="clickNav(4)">
-                <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.44 57.66">
-                    <path d="M74.23,43.82a16,16,0,0,0-7.7-13.67.89.89,0,0,0-.9,1.53,14.21,14.21,0,0,1,6.84,12.13.88.88,0,1,0,1.76,0ZM62.76,29.43a.89.89,0,0,0-.66-1.07A11.45,11.45,0,0,0,59,27.94a.89.89,0,0,0,0,1.78h0a9.85,9.85,0,0,1,2.67.37.88.88,0,0,0,1.06-.66ZM32.68,78.1,46.9,63.72a4.44,4.44,0,0,0,.78-1.05,21.25,21.25,0,0,0,10.84,3A21.81,21.81,0,1,0,40.3,55.47a4.61,4.61,0,0,0-.87.69L25.21,70.54a5.39,5.39,0,0,0,0,7.56,5.25,5.25,0,0,0,7.48,0Zm7.78-34.27A18.06,18.06,0,1,1,58.52,62.08,18.18,18.18,0,0,1,40.46,43.82ZM27.7,75.58a1.84,1.84,0,0,1,0-2.52L41.92,58.68a1.91,1.91,0,0,1,.21-.18s.4.05,1.41,1.07S44.58,61,44.59,61a.79.79,0,0,1-.18.23L30.19,75.58a1.75,1.75,0,0,1-2.47,0l0,0Z" transform="translate(-23.66 -22)"/>
-                </svg>                      
-                <span class="navspan">了解更多</span>
-                <transition :name="navtrans">
-                <div class="navbg navbg4" v-show="currect == 4"></div>
-                </transition>
-            </div>
+        <div id="loading">
+            <p>你好，我是王子浩~</p>
+            <img src="./img/3.gif" alt="meow">
+            <p>页面加载中...</p>
         </div>
-            <div class="pages">
-                <transition :name="pagetrans">
-                    <div id="page1" class="page" v-show="currect == 1">
-                        <div class="pagecontent pagecontent1">
-                            <h1>1邀请好友一起重温旧日时光吧！</h1>
-                            <p>假期临近，Xbox 阵营视乎没有甚么太大的动作？并不是了，因为他们准备了让他们的粉丝重新投入美好的从前！一系列在 2000 年代大热的 Xbox 游戏将会在明天开始陆续上架，让各位手执 Xbox One 新主机的玩家都可以回味老游戏。以下是首先登场的 13 款游戏：BlackBloodRayne 2（吸血莱恩 2）Crimson Skies: High Road to Revenge（王牌飞行员：复仇大道） Dead to Rights（绝命战警）Fuzion Frenzy（疯狂大乱斗）Grabbed by the Ghoulies（鬼屋大冒险）The King of Fighters：NeoWave（拳皇 NEOWAVE）Ninja Gaiden：Black（忍者外传：黑之章）Prince of Persia：The Sands of Time（波斯王子：时之砂）Psychonauts（疯狂世界）Red Faction II（赤色战线：游击战队）Sid Meier's Pirates! （Sid Meier's 大海盗！）Star Wars：Knights of the Old Republic（星际大战：旧共和国的武士）如果玩家还有藏着这些老游戏的光碟，只要放进 Xbox One 里就能运行。没有也不打紧，因为 Xbox Store 上也有上架，下载每款游戏只要 10 美元。这些游戏大多都有个叫人怀念的好功能，就是支持单机的多人游戏模式，正好适合假期期间邀请好友到来一起重温旧日时光。而且画质也会从以前的 480p 提升至 1080p，部分游戏像是 Ninja Gaiden Black 更会支持 16:9 显示。假期临近，Xbox 阵营视乎没有甚么太大的动作？并不是了，因为他们准备了让他们的粉丝重新投入美好的从前！一系列在 2000 年代大热的 Xbox 游戏将会在明天开始陆续上架，让各位手执 Xbox One 新主机的玩家都可以回味老游戏。以下是首先登场的 13 款游戏：BlackBloodRayne 2（吸血莱恩 2）Crimson Skies: High Road to Revenge（王牌飞行员：复仇大道） Dead to Rights（绝命战警）Fuzion Frenzy（疯狂大乱斗）Grabbed by the Ghoulies（鬼屋大冒险）The King of Fighters：NeoWave（拳皇 NEOWAVE）Ninja Gaiden：Black（忍者外传：黑之章）Prince of Persia：The Sands of Time（波斯王子：时之砂）Psychonauts（疯狂世界）Red Faction II（赤色战线：游击战队）Sid Meier's Pirates! （Sid Meier's 大海盗！）Star Wars：Knights of the Old Republic（星际大战：旧共和国的武士）如果玩家还有藏着这些老游戏的光碟，只要放进 Xbox One 里就能运行。没有也不打紧，因为 Xbox Store 上也有上架，下载每款游戏只要 10 美元。这些游戏大多都有个叫人怀念的好功能，就是支持单机的多人游戏模式，正好适合假期期间邀请好友到来一起重温旧日时光。而且画质也会从以前的 480p 提升至 1080p，部分游戏像是 Ninja Gaiden Black 更会支持 16:9 显示
-                            </p>
-                        </div>
-                    </div>
-                </transition>
-                <transition :name="pagetrans">
-                    <div id="page2" class="page" v-show="currect == 2">
-                        <div class="pagecontent pagecontent2">
-                            <div class="ability1">
-                                <div class="abicon">
-                                </div>
-                                <div class="abinfo">
-                                    <h2>HTML+CSS</h2>
-                                    <p>可以熟练的进行前端页面设计布局、页面重构，熟悉HTML5、CSS3新特性，并会加以运用。</p>
-                                </div>
-                            </div>
-                            <div class="ability2">
-                                <div class="abicon">
-                                </div>
-                                <div class="abinfo">
-                                    <h2>JAVASCRIPT</h2>
-                                    <p>熟悉原生JS的使用，会在项目中使用ES6/ES7新语法，并在项目中使用BABEL进行转换。</p>
-                                </div>
-                            </div>
-                            <div class="ability3">
-                                <div class="abicon">
-                                </div>
-                                <div class="abinfo">
-                                    <h2>NODEJS</h2>
-                                    <p>能够运用nodejs进行web开发，会使用express.js、pug.js等框架及工具。</p>
-                                </div>
-                            </div>
-                            <div class="ability4">
-                                <div class="abicon">
-                                </div>
-                                <div class="abinfo">
-                                    <h2>VUEJS</h2>
-                                    <p>深入学习过渐进式框架vue.js，有结合nodejs、vuejs及其插件开发SAP应用的经验。</p>
-                                </div>
-                            </div>
-                            <div class="ability5">
-                                <div class="abicon">
-                                </div>
-                                <div class="abinfo">
-                                    <h2>PS/AI</h2>
-                                    <p>熟练使用Photoshop、Illustrator进行图像处理、绘制矢量图形，有制作svg动画的经验。</p>
-                                </div>
-                            </div>
-                            <div class="ability6">
-                                <div class="abicon">
-                                </div>
-                                <div class="abinfo">
-                                    <h2>DESIGN</h2>
-                                    <p>喜欢追随流行的UI设计潮流，对网页设计元素进行重构，优化用户体验与观感。</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-                <transition :name="pagetrans">
-                    <div id="page3" class="page" v-show="currect == 3">
-                        <div class="pagecontent pagecontent3">
-                            <span>2017</span>
-                            <div class="works">
-                                <img src="" alt="work1">
-                                <div class="workinfo1">
-                                    <h2>Lather</h2>
-                                    <p></p>
-                                </div>
-                            </div>
-                            <div class="works">
-                                <img src="" alt="work2">
-                                <div class="workinfo2">
-                                    <h2>枕边明月光</h2>
-                                    <p></p>
-                                </div>
-                            </div>
-                            <div class="works">
-                                <img src="" alt="work3">
-                                <div class="workinfo3">
-                                    <h2>Vue-TypingIt</h2>
-                                    <p></p>
-                                </div>
-                            </div>
-                            <span>2016</span>
-                            <div class="works">
-                                <img src="" alt="work4">
-                                <div class="workinfo4">
-                                    <h2>19酒商城</h2>
-                                    <p></p>
-                                </div>
-                            </div>
-                            <div class="works">
-                                <img src="./img/work5.jpg" alt="work5">
-                                <div class="workinfo5">
-                                    <h2>Roar</h2>
-                                    <p></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-                <transition :name="pagetrans">
-                    <div id="page4" class="page" v-show="currect == 4">
-                        <div class="pagecontent pagecontent4">
-                            <div class="mylinks">
-                                <div class="link link1">
-                                    <div class="linkicon">
-
-                                    </div>
-                                    <div class="linkinfo">
-                                        <h2>我的博客</h2>
-                                        <p>https://howie95.com/blog/</p>
-                                    </div>
-                                </div>
-                                <div class="link link2">
-                                    <div class="linkicon">
-
-                                    </div>
-                                    <div class="linkinfo">
-                                        <h2>摄影相簿</h2>
-                                        <p>https://howie95.com/photo/</p>
-                                    </div>
-                                </div>
-                                <div class="link link3"></div>
-                            </div>
-                            <div class="otherlinks">
-                                <a>QQ : 1096046927</a>
-                                <a href="mailto:lawslies@outlook.com">MAIL : lawslies@outlook.com</a>
-                                <a href="https://github.com/howie95/" target="_blank">Github : howie95</a>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
+        <div id="content">
+            <div class="navbar">
+                <div class="navbutton" :class="{navactive:currect == 1}" @click="clickNav(1)">
+                    <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.97 57.5">
+                        <path d="M60.64,55.67a17.82,17.82,0,1,0-17.28,0A28.7,28.7,0,0,0,24.1,77.12a1.76,1.76,0,0,0-.09.46s0,.08,0,.12a1.78,1.78,0,1,0,3.56,0,25,25,0,0,1,48.84,0,1.78,1.78,0,0,0,3.56,0,28.64,28.64,0,0,0-19.33-22ZM37.74,40A14.26,14.26,0,1,1,52,54.33,14.31,14.31,0,0,1,37.74,40Z" transform="translate(-24 -22)"/>
+                    </svg>
+                    <span class="navspan">个人介绍</span>
+                    <transition :name="navtrans">
+                    <div class="navbg navbg1" v-show="currect == 1"></div>
+                    </transition>
+                </div>
+                <div class="navbutton" :class="{navactive:currect == 2}" @click="clickNav(2)">
+                    <svg class="navicon2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78.67 53.7">
+                        <path d="M89.64,48.38a4,4,0,0,0-1-1.41L63.33,24.18a4,4,0,0,0-5.39,6L80,50,58,69.83a4,4,0,1,0,5.39,6L88.67,53a4,4,0,0,0,1-4.65Z" transform="translate(-11.33 -23.15)"/>
+                        <path d="M21.36,50l22-19.84a4,4,0,1,0-5.39-6L12.7,47a4.12,4.12,0,0,0,0,6.07L38,75.82a4,4,0,1,0,5.39-6Z" transform="translate(-11.33 -23.15)"/>
+                    </svg>
+                    <span class="navspan">能力清单</span>
+                    <transition :name="navtrans">
+                    <div class="navbg navbg2" v-show="currect == 2"></div>
+                    </transition>
+                </div>
+                <div class="navbutton" :class="{navactive:currect == 3}" @click="clickNav(3)">
+                    <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58">
+                        <path d="M27.72,75.32A15.48,15.48,0,0,0,38.5,80,11.86,11.86,0,0,0,47,76.6l8.82-8.89.08-.07,0,0h0L74.63,48.72a7.29,7.29,0,0,0,1.84-3.09l4.26-15.42A12.75,12.75,0,0,0,81,28.34,6.35,6.35,0,0,0,74.65,22a12.87,12.87,0,0,0-2.1.34l-15.37,4a7.29,7.29,0,0,0-3.09,1.84L26.43,56.1c-5,5-4.46,13.47,1.29,19.22ZM52,36.87a14.79,14.79,0,0,0,1.3,4.76L36.14,58.77a8.84,8.84,0,0,1,1.79-9.07l0,0,0,0L52,35.52c0,.45,0,.89,0,1.35Zm2.21,6.41a16.41,16.41,0,0,0,2.4,3.13,16.18,16.18,0,0,0,3.7,2.7L43,66.4a12.54,12.54,0,0,1-6.12-5.82l17.3-17.3ZM62,50a14.45,14.45,0,0,0,5.2,1.09l-14,14.07a8.7,8.7,0,0,1-8.31,1.92ZM73.45,25.86a9.11,9.11,0,0,1,1.23-.23,2.73,2.73,0,0,1,2.7,2.72,9,9,0,0,1-.18,1l-1.91,6.91a8.59,8.59,0,0,1-8.58-8.65l6.75-1.77ZM64.91,28.1a10.11,10.11,0,0,0,3,7,10.34,10.34,0,0,0,6.83,3.08L73,44.67a3.55,3.55,0,0,1-.71,1.24c-3.64,2.6-9.23,1.83-13.11-2.05C55,39.75,54.4,33.73,57.57,30.14a3.6,3.6,0,0,1,.65-.28l6.7-1.76ZM29,58.66,32,55.59c0,.41,0,.8,0,1.22A16,16,0,0,0,47.39,71l-3,3a8.26,8.26,0,0,1-5.89,2.33A12.53,12.53,0,0,1,26.65,65.2,8.3,8.3,0,0,1,29,58.66Z" transform="translate(-23 -22)"/>
+                    </svg>
+                    <span class="navspan">项目、作品</span>
+                    <transition :name="navtrans">
+                    <div class="navbg navbg3" v-show="currect == 3"></div>
+                    </transition>
+                </div>
+                <div class="navbutton" :class="{navactive:currect == 4}" @click="clickNav(4)">
+                    <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.44 57.66">
+                        <path d="M74.23,43.82a16,16,0,0,0-7.7-13.67.89.89,0,0,0-.9,1.53,14.21,14.21,0,0,1,6.84,12.13.88.88,0,1,0,1.76,0ZM62.76,29.43a.89.89,0,0,0-.66-1.07A11.45,11.45,0,0,0,59,27.94a.89.89,0,0,0,0,1.78h0a9.85,9.85,0,0,1,2.67.37.88.88,0,0,0,1.06-.66ZM32.68,78.1,46.9,63.72a4.44,4.44,0,0,0,.78-1.05,21.25,21.25,0,0,0,10.84,3A21.81,21.81,0,1,0,40.3,55.47a4.61,4.61,0,0,0-.87.69L25.21,70.54a5.39,5.39,0,0,0,0,7.56,5.25,5.25,0,0,0,7.48,0Zm7.78-34.27A18.06,18.06,0,1,1,58.52,62.08,18.18,18.18,0,0,1,40.46,43.82ZM27.7,75.58a1.84,1.84,0,0,1,0-2.52L41.92,58.68a1.91,1.91,0,0,1,.21-.18s.4.05,1.41,1.07S44.58,61,44.59,61a.79.79,0,0,1-.18.23L30.19,75.58a1.75,1.75,0,0,1-2.47,0l0,0Z" transform="translate(-23.66 -22)"/>
+                    </svg>                      
+                    <span class="navspan">了解更多</span>
+                    <transition :name="navtrans">
+                    <div class="navbg navbg4" v-show="currect == 4"></div>
+                    </transition>
+                </div>
             </div>
-        <div class="background">
-            <div class="bg bg1">
-                <transition name="fadedown">
-                <div class="ball1"  v-show="currect == 1"></div>
-                </transition>
+                <div class="pages">
+                    <transition :name="pagetrans">
+                        <div id="page1" class="page" v-show="currect == 1">
+                            <div class="pagecontent pagecontent1">
+                                <h1>1邀请好友一起重温旧日时光吧！</h1>
+                                <p>假期临近，Xbox 阵营视乎没有甚么太大的动作？并不是了，因为他们准备了让他们的粉丝重新投入美好的从前！一系列在 2000 年代大热的 Xbox 游戏将会在明天开始陆续上架，让各位手执 Xbox One 新主机的玩家都可以回味老游戏。以下是首先登场的 13 款游戏：BlackBloodRayne 2（吸血莱恩 2）Crimson Skies: High Road to Revenge（王牌飞行员：复仇大道） Dead to Rights（绝命战警）Fuzion Frenzy（疯狂大乱斗）Grabbed by the Ghoulies（鬼屋大冒险）The King of Fighters：NeoWave（拳皇 NEOWAVE）Ninja Gaiden：Black（忍者外传：黑之章）Prince of Persia：The Sands of Time（波斯王子：时之砂）Psychonauts（疯狂世界）Red Faction II（赤色战线：游击战队）Sid Meier's Pirates! （Sid Meier's 大海盗！）Star Wars：Knights of the Old Republic（星际大战：旧共和国的武士）如果玩家还有藏着这些老游戏的光碟，只要放进 Xbox One 里就能运行。没有也不打紧，因为 Xbox Store 上也有上架，下载每款游戏只要 10 美元。这些游戏大多都有个叫人怀念的好功能，就是支持单机的多人游戏模式，正好适合假期期间邀请好友到来一起重温旧日时光。而且画质也会从以前的 480p 提升至 1080p，部分游戏像是 Ninja Gaiden Black 更会支持 16:9 显示。假期临近，Xbox 阵营视乎没有甚么太大的动作？并不是了，因为他们准备了让他们的粉丝重新投入美好的从前！一系列在 2000 年代大热的 Xbox 游戏将会在明天开始陆续上架，让各位手执 Xbox One 新主机的玩家都可以回味老游戏。以下是首先登场的 13 款游戏：BlackBloodRayne 2（吸血莱恩 2）Crimson Skies: High Road to Revenge（王牌飞行员：复仇大道） Dead to Rights（绝命战警）Fuzion Frenzy（疯狂大乱斗）Grabbed by the Ghoulies（鬼屋大冒险）The King of Fighters：NeoWave（拳皇 NEOWAVE）Ninja Gaiden：Black（忍者外传：黑之章）Prince of Persia：The Sands of Time（波斯王子：时之砂）Psychonauts（疯狂世界）Red Faction II（赤色战线：游击战队）Sid Meier's Pirates! （Sid Meier's 大海盗！）Star Wars：Knights of the Old Republic（星际大战：旧共和国的武士）如果玩家还有藏着这些老游戏的光碟，只要放进 Xbox One 里就能运行。没有也不打紧，因为 Xbox Store 上也有上架，下载每款游戏只要 10 美元。这些游戏大多都有个叫人怀念的好功能，就是支持单机的多人游戏模式，正好适合假期期间邀请好友到来一起重温旧日时光。而且画质也会从以前的 480p 提升至 1080p，部分游戏像是 Ninja Gaiden Black 更会支持 16:9 显示
+                                </p>
+                            </div>
+                        </div>
+                    </transition>
+                    <transition :name="pagetrans">
+                        <div id="page2" class="page" v-show="currect == 2">
+                            <div class="pagecontent pagecontent2">
+                                <div class="ability1">
+                                    <div class="abicon">
+                                    </div>
+                                    <div class="abinfo">
+                                        <h2>HTML+CSS</h2>
+                                        <p>可以熟练的进行前端页面设计布局、页面重构，熟悉HTML5、CSS3新特性，并会加以运用。</p>
+                                    </div>
+                                </div>
+                                <div class="ability2">
+                                    <div class="abicon">
+                                    </div>
+                                    <div class="abinfo">
+                                        <h2>JAVASCRIPT</h2>
+                                        <p>熟悉原生JS的使用，会在项目中使用ES6/ES7新语法，并在项目中使用BABEL进行转换。</p>
+                                    </div>
+                                </div>
+                                <div class="ability3">
+                                    <div class="abicon">
+                                    </div>
+                                    <div class="abinfo">
+                                        <h2>NODEJS</h2>
+                                        <p>能够运用nodejs进行web开发，会使用express.js、pug.js等框架及工具。</p>
+                                    </div>
+                                </div>
+                                <div class="ability4">
+                                    <div class="abicon">
+                                    </div>
+                                    <div class="abinfo">
+                                        <h2>VUEJS</h2>
+                                        <p>深入学习过渐进式框架vue.js，有结合nodejs、vuejs及其插件开发SAP应用的经验。</p>
+                                    </div>
+                                </div>
+                                <div class="ability5">
+                                    <div class="abicon">
+                                    </div>
+                                    <div class="abinfo">
+                                        <h2>PS/AI</h2>
+                                        <p>熟练使用Photoshop、Illustrator进行图像处理、绘制矢量图形，有制作svg动画的经验。</p>
+                                    </div>
+                                </div>
+                                <div class="ability6">
+                                    <div class="abicon">
+                                    </div>
+                                    <div class="abinfo">
+                                        <h2>DESIGN</h2>
+                                        <p>喜欢追随流行的UI设计潮流，对网页设计元素进行重构，优化用户体验与观感。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg2paws">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.77 15">
+                                    <g id="leftpaw">
+                                        <path class="cls-1" d="M1.95,13a12.34,12.34,0,0,1-2-6.82C.12,4.89.95,1.32,2.65.85a3.68,3.68,0,0,1,.91,0s.22-1,1.85-.83c.6.07.87.94.87.94S8.28.16,9,2A1.36,1.36,0,0,1,8.9,3s.91,0,.83,1.85-2,4.45-2,4.45S7.9,13.13,6.9,14,4.59,16.19,1.95,13Z" transform="translate(0.05 0)"/>
+                                        <path class="cls-2" d="M5.95.91A1.6,1.6,0,0,0,5.1,2.15a.15.15,0,0,0,.3,0,1.3,1.3,0,0,1,.7-1A.15.15,0,1,0,5.95.89Z" transform="translate(0.05 0)"/>
+                                        <path class="cls-2" d="M8.62,2.8A2.86,2.86,0,0,0,6.9,5.41a.15.15,0,1,0,.3,0A2.56,2.56,0,0,1,8.78,3c.18-.08,0-.33-.15-.26Z" transform="translate(0.05 0)"/>
+                                        <path class="cls-2" d="M3.24.91a2.12,2.12,0,0,0-.68,1.22c0,.19.25.27.29.08a1.86,1.86,0,0,1,.6-1.09C3.59,1,3.38.78,3.24.91Z" transform="translate(0.05 0)"/>
+                                        <path class="cls-2" d="M5.32,11.48a2.86,2.86,0,0,0,2.42-2,.15.15,0,1,0-.29-.09,2.56,2.56,0,0,1-2.2,1.8C5.05,11.19,5.15,11.51,5.32,11.48Z" transform="translate(0.05 0)"/>
+                                    </g>
+                                    <g id="rightpaw">
+                                        <path class="cls-1" d="M97.66,13a12.34,12.34,0,0,0,2-6.77c-.12-1.32-1-4.89-2.65-5.36a3.68,3.68,0,0,0-.91,0s-.22-1-1.85-.83c-.6.07-.87.94-.87.94s-2-.8-2.68,1a1.36,1.36,0,0,0,0,.91s-.91,0-.83,1.85,2,4.45,2,4.45-.14,3.91.83,4.81S95.08,16.19,97.66,13Z" transform="translate(0.05 0)"/>
+                                        <path class="cls-2" d="M93.52,1.21a1.3,1.3,0,0,1,.7,1c0,.19.31.19.3,0a1.6,1.6,0,0,0-.85-1.3c-.16-.11-.31.15-.15.26Z" transform="translate(0.05 0)"/>
+                                        <path class="cls-2" d="M91,3a2.56,2.56,0,0,1,1.58,2.35.15.15,0,1,0,.3,0A2.85,2.85,0,0,0,91,2.8C90.87,2.72,90.72,3,91,3Z" transform="translate(0.05 0)"/>
+                                        <path class="cls-2" d="M96.21,1a1.86,1.86,0,0,1,.6,1.09c0,.19.32.11.29-.08A2.12,2.12,0,0,0,96.42.91c-.14-.13-.35.08-.21.21Z" transform="translate(0.05 0)"/>
+                                        <path class="cls-2" d="M94.34,11.48a2.86,2.86,0,0,1-2.42-2,.15.15,0,1,1,.29-.09h0a2.56,2.56,0,0,0,2.21,1.78c.2,0,.1.32-.07.29Z" transform="translate(0.05 0)"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </transition>
+                    <transition :name="pagetrans">
+                        <div id="page3" class="page" v-show="currect == 3">
+                            <div class="pagecontent pagecontent3">
+                                <span>2017</span>
+                                <div class="works">
+                                    <img src="" alt="work1">
+                                    <div class="workinfo1">
+                                        <h2>Lather</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="works">
+                                    <img src="" alt="work2">
+                                    <div class="workinfo2">
+                                        <h2>枕边明月光</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="works">
+                                    <img src="" alt="work3">
+                                    <div class="workinfo3">
+                                        <h2>Vue-TypingIt</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <span>2016</span>
+                                <div class="works">
+                                    <img src="" alt="work4">
+                                    <div class="workinfo4">
+                                        <h2>19酒商城</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="works">
+                                    <img src="./img/work5.jpg" alt="work5">
+                                    <div class="workinfo5">
+                                        <h2>Roar</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </transition>
+                    <transition :name="pagetrans">
+                        <div id="page4" class="page" v-show="currect == 4">
+                            <div class="pagecontent pagecontent4">
+                                <div class="mylinks">
+                                    <a href="https://howie95.com/blog/">
+                                        <div class="link link1">
+                                            <div class="linkicon">
+
+                                            </div>
+                                            <div class="linkinfo">
+                                                <h2>我的博客</h2>
+                                                <p>https://howie95.com/blog/</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="https://howie95.com/photo/">
+                                        <div class="link link2">
+                                            <div class="linkicon">
+
+                                            </div>
+                                            <div class="linkinfo">
+                                                <h2>摄影相簿</h2>
+                                                <p>https://howie95.com/photo/</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="link link3"></div>
+                                </div>
+                                <div class="otherlinks">
+                                    <a>QQ : 1096046927</a>
+                                    <a href="mailto:lawslies@outlook.com">MAIL : lawslies@outlook.com</a>
+                                    <a href="https://github.com/howie95/" target="_blank">Github : howie95</a>
+                                </div>
+                            </div>
+                        </div>
+                    </transition>
+                </div>
+            <div class="background">
+                <div class="bg bg1">
+                    <transition name="faderight">
+                        <div class="pawprint1"  v-show="currect == 1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.17 36.9">
+                                <path class="cls-1" d="M36,31.49c3.72,4.08-6.22,10.72-13.06,9.92S11,39.46,12,34c1-5.66,4.11-1.79,7.8-9.88C21.31,20.8,29,20,29.72,23.77,30.62,28.72,33.3,28.56,36,31.49Z" transform="translate(-3.83 -4.59)"/>
+                                <path class="cls-1" d="M6.12,25.33c1.49,3.78,6.43,2.11,7.81.38s.34-4.89-2.3-7-6-2.28-7.35-.55S4.86,22.23,6.12,25.33Z" transform="translate(-3.83 -4.59)"/>
+                                <path class="cls-1" d="M37.42,12.69c-.37-4.17-2.88-7.27-5.63-7s-3.12,3.91-4.86,7.73C24.86,18,30.41,21,33.16,20.7S37.75,16.84,37.42,12.69Z" transform="translate(-3.83 -4.59)"/>
+                                <path class="cls-1" d="M24.59,10.71C23.2,6.5,19.84,3.88,17,4.76s-3.4,4.67-3.29,9.08c.12,4.85,5.41,7,8.22,6.09S25.92,14.9,24.59,10.71Z" transform="translate(-3.83 -4.59)"/>
+                                <path class="cls-1" d="M45.87,23c.59-3.66-.88-6.88-3.29-7.26S39,18.4,36.71,21.3c-2.78,3.46,1.33,7.24,3.75,7.63S45.25,26.62,45.87,23Z" transform="translate(-3.83 -4.59)"/>
+                            </svg>
+                        </div>
+                    </transition>
+                    <transition name="fadeleft">
+                        <div class="pawprint2"  v-show="currect == 1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.17 36.9">
+                                <path class="cls-1" d="M36,31.49c3.72,4.08-6.22,10.72-13.06,9.92S11,39.46,12,34c1-5.66,4.11-1.79,7.8-9.88C21.31,20.8,29,20,29.72,23.77,30.62,28.72,33.3,28.56,36,31.49Z" transform="translate(-3.83 -4.59)"/>
+                                <path class="cls-1" d="M6.12,25.33c1.49,3.78,6.43,2.11,7.81.38s.34-4.89-2.3-7-6-2.28-7.35-.55S4.86,22.23,6.12,25.33Z" transform="translate(-3.83 -4.59)"/>
+                                <path class="cls-1" d="M37.42,12.69c-.37-4.17-2.88-7.27-5.63-7s-3.12,3.91-4.86,7.73C24.86,18,30.41,21,33.16,20.7S37.75,16.84,37.42,12.69Z" transform="translate(-3.83 -4.59)"/>
+                                <path class="cls-1" d="M24.59,10.71C23.2,6.5,19.84,3.88,17,4.76s-3.4,4.67-3.29,9.08c.12,4.85,5.41,7,8.22,6.09S25.92,14.9,24.59,10.71Z" transform="translate(-3.83 -4.59)"/>
+                                <path class="cls-1" d="M45.87,23c.59-3.66-.88-6.88-3.29-7.26S39,18.4,36.71,21.3c-2.78,3.46,1.33,7.24,3.75,7.63S45.25,26.62,45.87,23Z" transform="translate(-3.83 -4.59)"/>
+                            </svg>
+                        </div>
+                    </transition>
+                </div>
                 <transition name="fadeleft">
-                <div class="ball2"  v-show="currect == 1"></div>
-                </transition>
-                <transition name="fadeup">
-                <div class="ball3"  v-show="currect == 1"></div>
-                </transition>
-                <transition name="faderight">
-                <div class="ball4"  v-show="currect == 1"></div>
-                </transition>
-            </div>
-            <transition name="fadeleft">
-                <div class="bg bg2" v-show="currect == 2">
-                    <span class="span1">WebDesign</span>
-                    <span class="span2">UI/UX</span>
-                    <span class="span3">Javascript</span>
-                    <span class="span4">PS/AI</span>
-                </div>
-            </transition>
-            <transition name="fade">
-                <div class="bg bg2cat" v-show="currect == 2">
-                    <svg class="cat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.1 174">
-                        <g id="body">
-                            <path class="cls-1" d="M58.18,72c2,6.84,2.43,14.35,0,21.07-2,5.46-5.65,10.17-8.58,15.07L38.08,126.05c-3.92,5.37-7.09,11.63-12,16.32a32.84,32.84,0,0,1-10.65,6.71,7.7,7.7,0,0,0-3.18,2.18c-3.26,4,1.1,7.57,4.72,7.12,2.83-.35,5.15-2.33,7.23-4.28,7.34-6.84,14.09-14.32,21.93-20.6a10.2,10.2,0,0,1,5.65-2.34c4.93-.33,6.57,3.32,6.77,6.7.36,6-3.07,11.52-5.15,17.18a58.49,58.49,0,0,0-3.11,17.9c-.15,3.65,0,7.55,2.57,10.39a5.83,5.83,0,0,0,4.52,2c3.71-.19,5.16-3.77,5-6.91-.1-2.46-1-4.82-1.33-7.25-1.12-7.32,2.17-14.51,5.24-21.25q10.8-23.71,19.33-48.36C86.86,98.1,88,94.66,88.9,91.15c6-23.94-.77-49.08-8.24-72.61-.85-2.69-1.83-5.56-5.45-6.23a5,5,0,0,0-4.5,1.46c-3.78,4-.46,9.24,1.75,13.65a30.9,30.9,0,0,1,2.61,20.08L64.64,42.08a11.35,11.35,0,0,0-6.17-1.34c-5.87.51-7.57,5.7-8.32,10.65a7.07,7.07,0,0,0,.44,3.14C52.27,57.85,56.54,66.58,58.18,72Z" transform="translate(-11.11 -11.3)"/>
-                        </g>
-                        <g id="foot">
-                            <g>
-                            <path class="cls-2" d="M62.43,178.39c.13,3.13-1.32,6.71-5,6.9a5.82,5.82,0,0,1-4.52-2c-2.62-2.84-2.72-6.74-2.57-10.39a59.84,59.84,0,0,1,2.82-17c3,1.53,6,3,9,4.29a24.83,24.83,0,0,0-1.08,10.94C61.47,173.57,62.33,175.93,62.43,178.39Z" transform="translate(-11.11 -11.3)"/>
-                            <path class="cls-2" d="M29.44,141.85l4.46,2.82c-3.21,3.16-6.39,6.36-9.69,9.43C22.13,156,19.81,158,17,158.38c-3.62.44-8-3.16-4.72-7.12a7.66,7.66,0,0,1,3.18-2.18,32.8,32.8,0,0,0,10.64-6.71c.56-.53,1.09-1.09,1.61-1.66C28.27,141.1,28.85,141.48,29.44,141.85Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                        </g>
-                        <g id="right_paw" data-name="right paw">
-                            <path class="cls-1" d="M46.26,52.27A9,9,0,0,1,43.31,56a7.6,7.6,0,0,1-5.11,1.38c-2.31-.26-5.62-.32-7.53-1.38-2.63-1.46-4.62-3.7-7.52-2.62A8.87,8.87,0,0,0,18.91,57c-1.38,2.09-.68,3.64,1.09,6,.77,1,6.94,2,11.49,1.79,2.68-.12,5.37-.59,7.92.07,1.55.4,7.2.62,8.69,1.14C52,67.34,53.65,67.49,56,70c2.08,2.22,5,5,5,8,0,1,1.59.6,2.54.76a3,3,0,0,0,2.85-1.45,9.68,9.68,0,0,0,1.29-4.51,23.94,23.94,0,0,0,.13-6.48,24.06,24.06,0,0,0-3.51-8.19c-1.49-2.49-3.07-4.95-4.78-7.35a9.73,9.73,0,0,0-2.43-2.56,12.46,12.46,0,0,0-3.42-1.44,7.63,7.63,0,0,0-3.55-.41,4.24,4.24,0,0,0-2.81,2,7.54,7.54,0,0,0-.86,3Z" transform="translate(-11.11 -11.3)"/>
-                            <path class="cls-2" d="M38,64.62a8.53,8.53,0,0,0,.24-2.27,10.54,10.54,0,0,0-.62-4.29,7.34,7.34,0,0,0-.4-.77c-2.2-.2-4.92-.36-6.59-1.29-2.63-1.46-4.62-3.7-7.52-2.62A8.87,8.87,0,0,0,18.91,57c-1.38,2.09-.68,3.64,1.09,6,.77,1,6.94,2,11.49,1.79A40.35,40.35,0,0,1,38,64.62Z" transform="translate(-11.11 -11.3)"/>
-                            <g id="_1" data-name="1">
-                            <g>
-                                <path class="cls-3" d="M23.82,55.56c.65.43.14,1.29-.24,1.48s-.93-.13-1.22-.71-.19-1.21.19-1.4S23.29,55.2,23.82,55.56Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-3" d="M22.13,59.94c1.05,0,1.13,1.34.84,1.84s-1.14.56-1.9.13-1.13-1.2-.84-1.71S21.25,59.94,22.13,59.94Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-3" d="M22,57c1,0,1.08,1.27.8,1.75s-1.08.53-1.8.12-1.08-1.14-.8-1.62S21.17,57,22,57Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                            <path class="cls-3" d="M28,59.4A1.84,1.84,0,0,1,26,61a1.84,1.84,0,0,1-2-1.6c0-.88.5-2.4,1.6-2.4A3,3,0,0,1,28,59.4Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                        </g>
-                        <g id="leftpaw">
-                            <path class="cls-1" d="M80.65,18.54c-.85-2.69-1.83-5.56-5.45-6.23a5,5,0,0,0-4.5,1.46c-3.78,4-.46,9.24,1.75,13.65a30.9,30.9,0,0,1,2.63,20A53.89,53.89,0,0,0,90.52,59.83C88.95,45.89,84.91,32,80.65,18.54Z" transform="translate(-11.11 -11.3)"/>
-                            <g id="_2" data-name="2">
-                            <path class="cls-2" d="M85.5,34.81,85,35a21.42,21.42,0,0,1-9.73,1,30.64,30.64,0,0,0-2.77-8.56c-2.22-4.41-5.54-9.69-1.76-13.65a5,5,0,0,1,4.5-1.46c3.61.67,4.59,3.54,5.44,6.23C82.35,23.89,84,29.33,85.5,34.81Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                            <g id="_1-2" data-name="1">
-                            <g>
-                                <path class="cls-3" d="M70.52,18.34c.54.71,1.48.07,1.68-.38s-.21-1.05-.9-1.35-1.4-.13-1.59.31S70.07,17.76,70.52,18.34Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-3" d="M75.41,16.11c.07,1.2,1.61,1.2,2.16.83s.56-1.34,0-2.18-1.45-1.21-2-.84S75.35,15.1,75.41,16.11Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-3" d="M72,16.16c.07,1.14,1.53,1.15,2.06.79s.53-1.27,0-2.07-1.38-1.16-1.91-.8S72,15.21,72,16.16Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                            <path class="cls-3" d="M76,18.22a1.84,1.84,0,0,1,.92,2.39A1.84,1.84,0,0,1,74.77,22c-.84-.27-2.14-1.2-1.8-2.25A3,3,0,0,1,76,18.22Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                        </g>
-                        <path class="cls-4" d="M69.7,50.13a27.47,27.47,0,0,0-5.13-5.84,10.46,10.46,0,0,0-7.2-2.48,2.85,2.85,0,0,0-1.75.64,3.48,3.48,0,0,0-.81,2.09,12.8,12.8,0,0,0,.35,3.7C62.5,62.5,65.42,77.8,63.34,93a99.29,99.29,0,0,1-2.94,12.86,65.54,65.54,0,0,1-4.35,12.45c-.85,1.67-1.84,3.26-2.73,4.9a50.37,50.37,0,0,0-3.63,8.39,8.93,8.93,0,0,1,2.1-.41c3.57-.24,5.41,1.61,6.23,3.92a32.76,32.76,0,0,0,5.47-6.58c2.7-4,5-7.61,7-11C72,115,79.2,99.39,80.35,94.57c.11-.46,6-14.47,3.15-25.07C81.72,62.83,73.7,55.75,69.7,50.13Z" transform="translate(-11.11 -11.3)"/>
-                        <g id="head">
-                            <path id="headball" class="cls-1" d="M69.52,38c0,8-11.05,17.92-19.31,15.56-7.51-2.15-13.95-5.36-15-12.88C34.06,32.8,45.37,23.55,54,23.55S69.52,30,69.52,38Z" transform="translate(-11.11 -11.3)"/>
-                            <g id="eye1">
-                            <circle class="cls-5" cx="50.39" cy="17.2" r="2.5"/>
-                            <path class="cls-6" d="M61.5,26a2.5,2.5,0,0,0-2.29,1.5,2.5,2.5,0,0,0,4.58,0A2.5,2.5,0,0,0,61.5,26Z" transform="translate(-11.11 -11.3)"/>
-                            <path class="cls-6" d="M58.19,26.32a27.41,27.41,0,0,1,4.91-2c.46-.14.26-.87-.2-.72a28.45,28.45,0,0,0-5.09,2c-.43.23,0,.88.38.65Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                            <g id="eye2">
-                            <circle class="cls-5" cx="40.89" cy="24.7" r="3"/>
-                            <path class="cls-6" d="M52,33a3,3,0,0,0-2.82,2,3,3,0,0,0,5.63,0A3,3,0,0,0,52,33Z" transform="translate(-11.11 -11.3)"/>
-                            <path class="cls-6" d="M48.73,31.73a19.66,19.66,0,0,0-2.16,2.2,34.18,34.18,0,0,0-1.9,2.88c-.26.41.39.79.65.38.57-.92,1.14-1.86,1.8-2.73a18.1,18.1,0,0,1,2.14-2.19c.35-.33-.18-.86-.53-.53Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                            <g id="mouth">
-                            <ellipse class="cls-4" cx="61.4" cy="39.1" rx="6.05" ry="4.72" transform="matrix(0.8, -0.6, 0.6, 0.8, -22.31, 33.08)"/>
-                            <path class="cls-6" d="M61.59,37.31l.49-1.16a.5.5,0,0,0-.74-.62L59.6,36.64a.5.5,0,0,0,.25.93l1.25,0A.5.5,0,0,0,61.59,37.31Z" transform="translate(-11.11 -11.3)"/>
-                            <path class="cls-6" d="M57.68,39.19c.64,1,2.48,1.71,3.45.77.77-.75.54-2.15.24-3.06l-.63.36c.7.68,1.82,1.32,2.78.81a2.42,2.42,0,0,0,.75-3.34c-.29-.38-.82.15-.53.53.71.92-.34,2.53-1.46,2.13a2.9,2.9,0,0,1-1-.66.38.38,0,0,0-.63.36,3.88,3.88,0,0,1,.22,1.64c-.18,1.34-2,1-2.54.07-.26-.41-.91,0-.65.38Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                            <g id="ear1">
-                            <path class="cls-1" d="M25.16,33c3.3.14,8.16,9.39,12.19,12.61a75.86,75.86,0,0,1,3.39-10.25C36.45,32.24,29.47,29.47,25.16,33Z" transform="translate(-11.11 -11.3)"/>
-                            <path class="cls-7" d="M30.39,34.65c1.84-.18,4.62,4.84,6.79,6a37,37,0,0,1,1.33-4.17C36.28,35.24,32.64,33,30.39,34.65Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                            <g id="ear2">
-                            <path class="cls-1" d="M47,11.3c-.35,6.07-.68,11.71-1,16.7,2.63,1.84,6.89.28,9.51-2.36C53.25,22.77,49.66,14.5,47,11.3Z" transform="translate(-11.11 -11.3)"/>
-                            <path class="cls-7" d="M48.73,16.89c-.19,3.26-.36,6.29-.53,9,1.41,1,3.7.15,5.11-1.27C52.06,23,50.14,18.6,48.73,16.89Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                        </g>
-                    </svg> 
-                </div>
-            </transition>
-            <transition name="fade">
-                <div class="bg bg3" v-show="currect == 3">
-                    <div class="block1"></div>
-                    <div class="block2"></div>
-                    <div class="block3"></div>
-                    <div class="block4"></div>
-                    <div class="block5"></div>
-                </div>
-            </transition>  
-            <div class="bg bg4">
-                <transition name="faderight">
-                    <div class="leftcat" v-show="currect == 4">
-                        <svg class="cat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.1 174">
-                            <title>leftcat</title>
-                            <g id="body">
-                              <path class="cls-1" d="M58.18,72c2,6.84,2.43,14.35,0,21.07-2,5.46-5.65,10.17-8.58,15.07L38.08,126.05c-3.92,5.37-7.09,11.63-12,16.32a32.84,32.84,0,0,1-10.65,6.71,7.7,7.7,0,0,0-3.18,2.18c-3.26,4,1.1,7.57,4.72,7.12,2.83-.35,5.15-2.33,7.23-4.28,7.34-6.84,14.09-14.32,21.93-20.6a10.2,10.2,0,0,1,5.65-2.34c4.93-.33,6.57,3.32,6.77,6.7.36,6-3.07,11.52-5.15,17.18a58.49,58.49,0,0,0-3.11,17.9c-.15,3.65,0,7.55,2.57,10.39a5.83,5.83,0,0,0,4.52,2c3.71-.19,5.16-3.77,5-6.91-.1-2.46-1-4.82-1.33-7.25-1.12-7.32,2.17-14.51,5.24-21.25q10.8-23.71,19.33-48.36C86.86,98.1,88,94.66,88.9,91.15c6-23.94-.77-49.08-8.24-72.61-.85-2.69-1.83-5.56-5.45-6.23a5,5,0,0,0-4.5,1.46c-3.78,4-.46,9.24,1.75,13.65a30.9,30.9,0,0,1,2.61,20.08L64.64,42.08a11.35,11.35,0,0,0-6.17-1.34c-5.87.51-7.57,5.7-8.32,10.65a7.07,7.07,0,0,0,.44,3.14C52.27,57.85,56.54,66.58,58.18,72Z" transform="translate(-11.11 -11.3)"/>
-                            </g>
-                            <g id="foot">
-                              <g>
-                                <path class="cls-2" d="M62.43,178.39c.13,3.13-1.32,6.71-5,6.9a5.82,5.82,0,0,1-4.52-2c-2.62-2.84-2.72-6.74-2.57-10.39a59.84,59.84,0,0,1,2.82-17c3,1.53,6,3,9,4.29a24.83,24.83,0,0,0-1.08,10.94C61.47,173.57,62.33,175.93,62.43,178.39Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-2" d="M29.44,141.85l4.46,2.82c-3.21,3.16-6.39,6.36-9.69,9.43C22.13,156,19.81,158,17,158.38c-3.62.44-8-3.16-4.72-7.12a7.66,7.66,0,0,1,3.18-2.18,32.8,32.8,0,0,0,10.64-6.71c.56-.53,1.09-1.09,1.61-1.66C28.27,141.1,28.85,141.48,29.44,141.85Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                            </g>
-                            <g id="right_paw" data-name="right paw">
-                              <path class="cls-1" d="M46.26,52.27A9,9,0,0,1,43.31,56a7.6,7.6,0,0,1-5.11,1.38c-2.31-.26-5.62-.32-7.53-1.38-2.63-1.46-4.62-3.7-7.52-2.62A8.87,8.87,0,0,0,18.91,57c-1.38,2.09-.68,3.64,1.09,6,.77,1,6.94,2,11.49,1.79,2.68-.12,5.37-.59,7.92.07,1.55.4,7.2.62,8.69,1.14C52,67.34,53.65,67.49,56,70c2.08,2.22,5,5,5,8,0,1,1.59.6,2.54.76a3,3,0,0,0,2.85-1.45,9.68,9.68,0,0,0,1.29-4.51,23.94,23.94,0,0,0,.13-6.48,24.06,24.06,0,0,0-3.51-8.19c-1.49-2.49-3.07-4.95-4.78-7.35a9.73,9.73,0,0,0-2.43-2.56,12.46,12.46,0,0,0-3.42-1.44,7.63,7.63,0,0,0-3.55-.41,4.24,4.24,0,0,0-2.81,2,7.54,7.54,0,0,0-.86,3Z" transform="translate(-11.11 -11.3)"/>
-                              <path class="cls-2" d="M38,64.62a8.53,8.53,0,0,0,.24-2.27,10.54,10.54,0,0,0-.62-4.29,7.34,7.34,0,0,0-.4-.77c-2.2-.2-4.92-.36-6.59-1.29-2.63-1.46-4.62-3.7-7.52-2.62A8.87,8.87,0,0,0,18.91,57c-1.38,2.09-.68,3.64,1.09,6,.77,1,6.94,2,11.49,1.79A40.35,40.35,0,0,1,38,64.62Z" transform="translate(-11.11 -11.3)"/>
-                              <g id="_1" data-name="1">
-                                <g>
-                                  <path class="cls-3" d="M23.82,55.56c.65.43.14,1.29-.24,1.48s-.93-.13-1.22-.71-.19-1.21.19-1.4S23.29,55.2,23.82,55.56Z" transform="translate(-11.11 -11.3)"/>
-                                  <path class="cls-3" d="M22.13,59.94c1.05,0,1.13,1.34.84,1.84s-1.14.56-1.9.13-1.13-1.2-.84-1.71S21.25,59.94,22.13,59.94Z" transform="translate(-11.11 -11.3)"/>
-                                  <path class="cls-3" d="M22,57c1,0,1.08,1.27.8,1.75s-1.08.53-1.8.12-1.08-1.14-.8-1.62S21.17,57,22,57Z" transform="translate(-11.11 -11.3)"/>
-                                </g>
-                                <path class="cls-3" d="M28,59.4A1.84,1.84,0,0,1,26,61a1.84,1.84,0,0,1-2-1.6c0-.88.5-2.4,1.6-2.4A3,3,0,0,1,28,59.4Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                            </g>
-                            <g id="leftpaw">
-                              <path class="cls-1" d="M80.65,18.54c-.85-2.69-1.83-5.56-5.45-6.23a5,5,0,0,0-4.5,1.46c-3.78,4-.46,9.24,1.75,13.65a30.9,30.9,0,0,1,2.63,20A53.89,53.89,0,0,0,90.52,59.83C88.95,45.89,84.91,32,80.65,18.54Z" transform="translate(-11.11 -11.3)"/>
-                              <g id="_2" data-name="2">
-                                <path class="cls-2" d="M85.5,34.81,85,35a21.42,21.42,0,0,1-9.73,1,30.64,30.64,0,0,0-2.77-8.56c-2.22-4.41-5.54-9.69-1.76-13.65a5,5,0,0,1,4.5-1.46c3.61.67,4.59,3.54,5.44,6.23C82.35,23.89,84,29.33,85.5,34.81Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                              <g id="_1-2" data-name="1">
-                                <g>
-                                  <path class="cls-3" d="M70.52,18.34c.54.71,1.48.07,1.68-.38s-.21-1.05-.9-1.35-1.4-.13-1.59.31S70.07,17.76,70.52,18.34Z" transform="translate(-11.11 -11.3)"/>
-                                  <path class="cls-3" d="M75.41,16.11c.07,1.2,1.61,1.2,2.16.83s.56-1.34,0-2.18-1.45-1.21-2-.84S75.35,15.1,75.41,16.11Z" transform="translate(-11.11 -11.3)"/>
-                                  <path class="cls-3" d="M72,16.16c.07,1.14,1.53,1.15,2.06.79s.53-1.27,0-2.07-1.38-1.16-1.91-.8S72,15.21,72,16.16Z" transform="translate(-11.11 -11.3)"/>
-                                </g>
-                                <path class="cls-3" d="M76,18.22a1.84,1.84,0,0,1,.92,2.39A1.84,1.84,0,0,1,74.77,22c-.84-.27-2.14-1.2-1.8-2.25A3,3,0,0,1,76,18.22Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                            </g>
-                            <path class="cls-4" d="M69.7,50.13a27.47,27.47,0,0,0-5.13-5.84,10.46,10.46,0,0,0-7.2-2.48,2.85,2.85,0,0,0-1.75.64,3.48,3.48,0,0,0-.81,2.09,12.8,12.8,0,0,0,.35,3.7C62.5,62.5,65.42,77.8,63.34,93a99.29,99.29,0,0,1-2.94,12.86,65.54,65.54,0,0,1-4.35,12.45c-.85,1.67-1.84,3.26-2.73,4.9a50.37,50.37,0,0,0-3.63,8.39,8.93,8.93,0,0,1,2.1-.41c3.57-.24,5.41,1.61,6.23,3.92a32.76,32.76,0,0,0,5.47-6.58c2.7-4,5-7.61,7-11C72,115,79.2,99.39,80.35,94.57c.11-.46,6-14.47,3.15-25.07C81.72,62.83,73.7,55.75,69.7,50.13Z" transform="translate(-11.11 -11.3)"/>
-                            <g id="head">
-                              <path id="headball" class="cls-1" d="M69.52,38c0,8-11.05,17.92-19.31,15.56-7.51-2.15-13.95-5.36-15-12.88C34.06,32.8,45.37,23.55,54,23.55S69.52,30,69.52,38Z" transform="translate(-11.11 -11.3)"/>
-                              <g id="eye1">
-                                <circle class="cls-5" cx="50.39" cy="17.2" r="2.5"/>
-                                <path class="cls-6" d="M61.5,26a2.5,2.5,0,0,0-2.29,1.5,2.5,2.5,0,0,0,4.58,0A2.5,2.5,0,0,0,61.5,26Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-6" d="M58.19,26.32a27.41,27.41,0,0,1,4.91-2c.46-.14.26-.87-.2-.72a28.45,28.45,0,0,0-5.09,2c-.43.23,0,.88.38.65Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                              <g id="eye2">
-                                <circle class="cls-5" cx="40.89" cy="24.7" r="3"/>
-                                <path class="cls-6" d="M52,33a3,3,0,0,0-2.82,2,3,3,0,0,0,5.63,0A3,3,0,0,0,52,33Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-6" d="M48.73,31.73a19.66,19.66,0,0,0-2.16,2.2,34.18,34.18,0,0,0-1.9,2.88c-.26.41.39.79.65.38.57-.92,1.14-1.86,1.8-2.73a18.1,18.1,0,0,1,2.14-2.19c.35-.33-.18-.86-.53-.53Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                              <g id="mouth">
-                                <ellipse class="cls-4" cx="61.4" cy="39.1" rx="6.05" ry="4.72" transform="matrix(0.8, -0.6, 0.6, 0.8, -22.31, 33.08)"/>
-                                <path class="cls-6" d="M61.59,37.31l.49-1.16a.5.5,0,0,0-.74-.62L59.6,36.64a.5.5,0,0,0,.25.93l1.25,0A.5.5,0,0,0,61.59,37.31Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-6" d="M57.68,39.19c.64,1,2.48,1.71,3.45.77.77-.75.54-2.15.24-3.06l-.63.36c.7.68,1.82,1.32,2.78.81a2.42,2.42,0,0,0,.75-3.34c-.29-.38-.82.15-.53.53.71.92-.34,2.53-1.46,2.13a2.9,2.9,0,0,1-1-.66.38.38,0,0,0-.63.36,3.88,3.88,0,0,1,.22,1.64c-.18,1.34-2,1-2.54.07-.26-.41-.91,0-.65.38Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                              <g id="ear1">
-                                <path class="cls-1" d="M25.16,33c3.3.14,8.16,9.39,12.19,12.61a75.86,75.86,0,0,1,3.39-10.25C36.45,32.24,29.47,29.47,25.16,33Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-7" d="M30.39,34.65c1.84-.18,4.62,4.84,6.79,6a37,37,0,0,1,1.33-4.17C36.28,35.24,32.64,33,30.39,34.65Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                              <g id="ear2">
-                                <path class="cls-1" d="M47,11.3c-.35,6.07-.68,11.71-1,16.7,2.63,1.84,6.89.28,9.51-2.36C53.25,22.77,49.66,14.5,47,11.3Z" transform="translate(-11.11 -11.3)"/>
-                                <path class="cls-7" d="M48.73,16.89c-.19,3.26-.36,6.29-.53,9,1.41,1,3.7.15,5.11-1.27C52.06,23,50.14,18.6,48.73,16.89Z" transform="translate(-11.11 -11.3)"/>
-                              </g>
-                            </g>
-                        </svg>                          
+                    <div class="bg bg2" v-show="currect == 2">
+                        <span class="span1">WebDesign</span>
+                        <span class="span2">UI/UX</span>
+                        <span class="span3">Javascript</span>
+                        <span class="span4">PS/AI</span>
                     </div>
                 </transition>
-                <transition name="fadeleft">
-                    <div class="wool" v-show="currect == 4">
-                        <svg id="wool" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.17 92.17">
-                            <circle class="cls-1" cx="46.08" cy="46.08" r="46.08"/>
-                            <path class="cls-2" d="M77.64,12.89C54.28,11.36,36,20.06,24.78,27.72A88.56,88.56,0,0,0,5.41,45.33h0c0,.27-.06.53-.09.8a.81.81,0,0,0,.26.36.84.84,0,0,0,1.18-.17,86.71,86.71,0,0,1,19-17.23C37,21.45,55.34,12.72,78.87,14.66a.82.82,0,0,0,.72-.32Q78.63,13.59,77.64,12.89Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M86.44,21.74a.82.82,0,0,0,.49-.2c-.4-.49-.81-1-1.23-1.44C56.3,21.46,36.09,32,24.29,40.72c-11,8.09-16.79,15.86-18.42,18.22q.18,1,.41,2a.81.81,0,0,0,.53-.35c.06-.09,5.88-9.24,18.56-18.55C37,33.43,57.13,22.94,86.44,21.74Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M63.91,94.88C52.1,57.34,57.92,26,58,25.72a.84.84,0,0,0-1.65-.32c-.06.32-6,32,6,69.93.54-.13,1.08-.28,1.62-.44C63.91,94.89,63.91,94.89,63.91,94.88Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M32.27,36.93a.84.84,0,0,0-.83-.85.86.86,0,0,0-.85.83c0,.38-.45,37.8,11.94,59,.63.12,1.26.23,1.9.33a.83.83,0,0,0-.1-.56C31.81,75,32.26,37.31,32.27,36.93Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M61.34,5.66c-19.52.68-38.71,11.05-45,14.75-.75.86-1.47,1.74-2.15,2.65a.83.83,0,0,0,.5.19.84.84,0,0,0,.46-.14c.25-.16,25.06-16.28,49.24-15.8a.83.83,0,0,0,.8-.59C64,6.31,62.66,6,61.34,5.66Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M20,46a.84.84,0,1,0-1.66-.26c0,.32-4.49,31.07,15.73,47.7,1.13.45,2.27.87,3.44,1.23a.83.83,0,0,0-.3-.94C15.39,78.16,20,46.28,20,46Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M95.22,37c-.18-.58-.37-1.15-.58-1.72-25.16-5.54-38.72,2.5-39.28,2.85a.84.84,0,1,0,.88,1.43c.14-.08,13.71-8.15,38.55-2.54A.82.82,0,0,0,95.22,37Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M56,51.91a.84.84,0,1,0,.48,1.61c.22-.06,22.46-6.52,40.31,1a.85.85,0,0,0,.25.05c0-.57.1-1.13.12-1.71C78.87,45.3,57,51.64,56,51.91Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M75.62,49.78a.84.84,0,0,0-1,.57A47.4,47.4,0,0,1,57.71,74.29a.84.84,0,0,0,.94,1.39A48.23,48.23,0,0,0,76.19,50.82.84.84,0,0,0,75.62,49.78Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M88.64,50.81a.82.82,0,0,0-.86.83A51.88,51.88,0,0,1,62.67,91.94a.84.84,0,0,0,.43,1.56.83.83,0,0,0,.43-.12A53.68,53.68,0,0,0,89.46,51.67.84.84,0,0,0,88.64,50.81Z" transform="translate(-5.1 -4.53)"/>
-                            <path class="cls-2" d="M53.37,96.64a.81.81,0,0,0,0-.23c-15-45.63-6.41-66.5-6.32-66.7A.84.84,0,1,0,45.47,29c-.37.86-8.92,21.49,6.19,67.64C52.23,96.68,52.8,96.66,53.37,96.64Z" transform="translate(-5.1 -4.53)"/>
-                        </svg>
-                        <svg id="woolline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.39 52.85">
-                            <path class="cls-1" d="M2.29,55.7l1.13.09C6.66,50.46,22.53,50,26,46c13-15-.21-30.24,6.18-35.82,9.6-8.39,19.48-5.52,19.6-5.56a.91.91,0,0,0,.59-1.1A.82.82,0,0,0,51.28,3,29,29,0,0,0,30,10c-6.38,5.61,7,23-6,35-3.95,3.65-18.62,4.33-21.92,9.75a.83.83,0,0,0,.19.94Z" transform="translate(-2.01 -2.94)"/>
+                <div class="bg bg2svg"  v-show="currect == 2">
+                    <div class="bg2ear">
+                        <svg id="page2ears" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.43 12.61">
+                            <path class="cls-1" d="M40.69,14a.33.33,0,0,0,0-.08c-1-3.1-5.66-7.72-8.81-12.37a.28.28,0,0,0-.53.15c-.14,4.24-1,8.9-1.08,12.3Z" transform="translate(-30.27 -1.39)"/>
+                            <path class="cls-2" d="M38.8,14c-.79-1.65-2.88-3.9-4.42-6.2a.27.27,0,0,0-.52.15c-.06,2.08-.4,4.29-.47,6Z" transform="translate(-30.27 -1.39)"/>
+                            <path class="cls-1" d="M72.7,14c-.08-3.4-.94-8.06-1.08-12.3a.28.28,0,0,0-.53-.15c-3.15,4.65-7.78,9.27-8.81,12.37a.33.33,0,0,0,0,.08Z" transform="translate(-30.27 -1.39)"/>
+                            <path class="cls-2" d="M69.59,14c-.08-1.75-.41-4-.47-6a.27.27,0,0,0-.52-.15C67.05,10.1,65,12.35,64.17,14Z" transform="translate(-30.27 -1.39)"/>
                         </svg>
                     </div>
-                </transition>
+                </div>
+                <div class="bg bg3">
+                    <transition name="fadedown">
+                    <div class="ball1"  v-show="currect == 3"></div>
+                    </transition>
+                    <transition name="fadeleft">
+                    <div class="ball2"  v-show="currect == 3"></div>
+                    </transition>
+                    <transition name="fadeup">
+                    <div class="ball3"  v-show="currect == 3"></div>
+                    </transition>
+                    <transition name="faderight">
+                    <div class="ball4"  v-show="currect == 3"></div>
+                    </transition>
+                </div>
+                <div class="bg bg4">
+                    <transition name="faderight">
+                        <div class="leftcat" v-show="currect == 4">
+                            <svg class="cat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.1 174">
+                                <title>leftcat</title>
+                                <g id="body">
+                                <path class="cls-1" d="M58.18,72c2,6.84,2.43,14.35,0,21.07-2,5.46-5.65,10.17-8.58,15.07L38.08,126.05c-3.92,5.37-7.09,11.63-12,16.32a32.84,32.84,0,0,1-10.65,6.71,7.7,7.7,0,0,0-3.18,2.18c-3.26,4,1.1,7.57,4.72,7.12,2.83-.35,5.15-2.33,7.23-4.28,7.34-6.84,14.09-14.32,21.93-20.6a10.2,10.2,0,0,1,5.65-2.34c4.93-.33,6.57,3.32,6.77,6.7.36,6-3.07,11.52-5.15,17.18a58.49,58.49,0,0,0-3.11,17.9c-.15,3.65,0,7.55,2.57,10.39a5.83,5.83,0,0,0,4.52,2c3.71-.19,5.16-3.77,5-6.91-.1-2.46-1-4.82-1.33-7.25-1.12-7.32,2.17-14.51,5.24-21.25q10.8-23.71,19.33-48.36C86.86,98.1,88,94.66,88.9,91.15c6-23.94-.77-49.08-8.24-72.61-.85-2.69-1.83-5.56-5.45-6.23a5,5,0,0,0-4.5,1.46c-3.78,4-.46,9.24,1.75,13.65a30.9,30.9,0,0,1,2.61,20.08L64.64,42.08a11.35,11.35,0,0,0-6.17-1.34c-5.87.51-7.57,5.7-8.32,10.65a7.07,7.07,0,0,0,.44,3.14C52.27,57.85,56.54,66.58,58.18,72Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                <g id="foot">
+                                <g>
+                                    <path class="cls-2" d="M62.43,178.39c.13,3.13-1.32,6.71-5,6.9a5.82,5.82,0,0,1-4.52-2c-2.62-2.84-2.72-6.74-2.57-10.39a59.84,59.84,0,0,1,2.82-17c3,1.53,6,3,9,4.29a24.83,24.83,0,0,0-1.08,10.94C61.47,173.57,62.33,175.93,62.43,178.39Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-2" d="M29.44,141.85l4.46,2.82c-3.21,3.16-6.39,6.36-9.69,9.43C22.13,156,19.81,158,17,158.38c-3.62.44-8-3.16-4.72-7.12a7.66,7.66,0,0,1,3.18-2.18,32.8,32.8,0,0,0,10.64-6.71c.56-.53,1.09-1.09,1.61-1.66C28.27,141.1,28.85,141.48,29.44,141.85Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                </g>
+                                <g id="right_paw" data-name="right paw">
+                                <path class="cls-1" d="M46.26,52.27A9,9,0,0,1,43.31,56a7.6,7.6,0,0,1-5.11,1.38c-2.31-.26-5.62-.32-7.53-1.38-2.63-1.46-4.62-3.7-7.52-2.62A8.87,8.87,0,0,0,18.91,57c-1.38,2.09-.68,3.64,1.09,6,.77,1,6.94,2,11.49,1.79,2.68-.12,5.37-.59,7.92.07,1.55.4,7.2.62,8.69,1.14C52,67.34,53.65,67.49,56,70c2.08,2.22,5,5,5,8,0,1,1.59.6,2.54.76a3,3,0,0,0,2.85-1.45,9.68,9.68,0,0,0,1.29-4.51,23.94,23.94,0,0,0,.13-6.48,24.06,24.06,0,0,0-3.51-8.19c-1.49-2.49-3.07-4.95-4.78-7.35a9.73,9.73,0,0,0-2.43-2.56,12.46,12.46,0,0,0-3.42-1.44,7.63,7.63,0,0,0-3.55-.41,4.24,4.24,0,0,0-2.81,2,7.54,7.54,0,0,0-.86,3Z" transform="translate(-11.11 -11.3)"/>
+                                <path class="cls-2" d="M38,64.62a8.53,8.53,0,0,0,.24-2.27,10.54,10.54,0,0,0-.62-4.29,7.34,7.34,0,0,0-.4-.77c-2.2-.2-4.92-.36-6.59-1.29-2.63-1.46-4.62-3.7-7.52-2.62A8.87,8.87,0,0,0,18.91,57c-1.38,2.09-.68,3.64,1.09,6,.77,1,6.94,2,11.49,1.79A40.35,40.35,0,0,1,38,64.62Z" transform="translate(-11.11 -11.3)"/>
+                                <g id="_1" data-name="1">
+                                    <g>
+                                    <path class="cls-3" d="M23.82,55.56c.65.43.14,1.29-.24,1.48s-.93-.13-1.22-.71-.19-1.21.19-1.4S23.29,55.2,23.82,55.56Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-3" d="M22.13,59.94c1.05,0,1.13,1.34.84,1.84s-1.14.56-1.9.13-1.13-1.2-.84-1.71S21.25,59.94,22.13,59.94Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-3" d="M22,57c1,0,1.08,1.27.8,1.75s-1.08.53-1.8.12-1.08-1.14-.8-1.62S21.17,57,22,57Z" transform="translate(-11.11 -11.3)"/>
+                                    </g>
+                                    <path class="cls-3" d="M28,59.4A1.84,1.84,0,0,1,26,61a1.84,1.84,0,0,1-2-1.6c0-.88.5-2.4,1.6-2.4A3,3,0,0,1,28,59.4Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                </g>
+                                <g id="left_paw">
+                                <path class="cls-1" d="M80.65,18.54c-.85-2.69-1.83-5.56-5.45-6.23a5,5,0,0,0-4.5,1.46c-3.78,4-.46,9.24,1.75,13.65a30.9,30.9,0,0,1,2.63,20A53.89,53.89,0,0,0,90.52,59.83C88.95,45.89,84.91,32,80.65,18.54Z" transform="translate(-11.11 -11.3)"/>
+                                <g id="_2" data-name="2">
+                                    <path class="cls-2" d="M85.5,34.81,85,35a21.42,21.42,0,0,1-9.73,1,30.64,30.64,0,0,0-2.77-8.56c-2.22-4.41-5.54-9.69-1.76-13.65a5,5,0,0,1,4.5-1.46c3.61.67,4.59,3.54,5.44,6.23C82.35,23.89,84,29.33,85.5,34.81Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                <g id="_1-2" data-name="1">
+                                    <g>
+                                    <path class="cls-3" d="M70.52,18.34c.54.71,1.48.07,1.68-.38s-.21-1.05-.9-1.35-1.4-.13-1.59.31S70.07,17.76,70.52,18.34Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-3" d="M75.41,16.11c.07,1.2,1.61,1.2,2.16.83s.56-1.34,0-2.18-1.45-1.21-2-.84S75.35,15.1,75.41,16.11Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-3" d="M72,16.16c.07,1.14,1.53,1.15,2.06.79s.53-1.27,0-2.07-1.38-1.16-1.91-.8S72,15.21,72,16.16Z" transform="translate(-11.11 -11.3)"/>
+                                    </g>
+                                    <path class="cls-3" d="M76,18.22a1.84,1.84,0,0,1,.92,2.39A1.84,1.84,0,0,1,74.77,22c-.84-.27-2.14-1.2-1.8-2.25A3,3,0,0,1,76,18.22Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                </g>
+                                <path class="cls-4" d="M69.7,50.13a27.47,27.47,0,0,0-5.13-5.84,10.46,10.46,0,0,0-7.2-2.48,2.85,2.85,0,0,0-1.75.64,3.48,3.48,0,0,0-.81,2.09,12.8,12.8,0,0,0,.35,3.7C62.5,62.5,65.42,77.8,63.34,93a99.29,99.29,0,0,1-2.94,12.86,65.54,65.54,0,0,1-4.35,12.45c-.85,1.67-1.84,3.26-2.73,4.9a50.37,50.37,0,0,0-3.63,8.39,8.93,8.93,0,0,1,2.1-.41c3.57-.24,5.41,1.61,6.23,3.92a32.76,32.76,0,0,0,5.47-6.58c2.7-4,5-7.61,7-11C72,115,79.2,99.39,80.35,94.57c.11-.46,6-14.47,3.15-25.07C81.72,62.83,73.7,55.75,69.7,50.13Z" transform="translate(-11.11 -11.3)"/>
+                                <g id="head">
+                                <path id="headball" class="cls-1" d="M69.52,38c0,8-11.05,17.92-19.31,15.56-7.51-2.15-13.95-5.36-15-12.88C34.06,32.8,45.37,23.55,54,23.55S69.52,30,69.52,38Z" transform="translate(-11.11 -11.3)"/>
+                                <g id="eye1">
+                                    <circle class="cls-5" cx="50.39" cy="17.2" r="2.5"/>
+                                    <path class="cls-6" d="M61.5,26a2.5,2.5,0,0,0-2.29,1.5,2.5,2.5,0,0,0,4.58,0A2.5,2.5,0,0,0,61.5,26Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-6" d="M58.19,26.32a27.41,27.41,0,0,1,4.91-2c.46-.14.26-.87-.2-.72a28.45,28.45,0,0,0-5.09,2c-.43.23,0,.88.38.65Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                <g id="eye2">
+                                    <circle class="cls-5" cx="40.89" cy="24.7" r="3"/>
+                                    <path class="cls-6" d="M52,33a3,3,0,0,0-2.82,2,3,3,0,0,0,5.63,0A3,3,0,0,0,52,33Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-6" d="M48.73,31.73a19.66,19.66,0,0,0-2.16,2.2,34.18,34.18,0,0,0-1.9,2.88c-.26.41.39.79.65.38.57-.92,1.14-1.86,1.8-2.73a18.1,18.1,0,0,1,2.14-2.19c.35-.33-.18-.86-.53-.53Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                <g id="mouth">
+                                    <ellipse class="cls-4" cx="61.4" cy="39.1" rx="6.05" ry="4.72" transform="matrix(0.8, -0.6, 0.6, 0.8, -22.31, 33.08)"/>
+                                    <path class="cls-6" d="M61.59,37.31l.49-1.16a.5.5,0,0,0-.74-.62L59.6,36.64a.5.5,0,0,0,.25.93l1.25,0A.5.5,0,0,0,61.59,37.31Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-6" d="M57.68,39.19c.64,1,2.48,1.71,3.45.77.77-.75.54-2.15.24-3.06l-.63.36c.7.68,1.82,1.32,2.78.81a2.42,2.42,0,0,0,.75-3.34c-.29-.38-.82.15-.53.53.71.92-.34,2.53-1.46,2.13a2.9,2.9,0,0,1-1-.66.38.38,0,0,0-.63.36,3.88,3.88,0,0,1,.22,1.64c-.18,1.34-2,1-2.54.07-.26-.41-.91,0-.65.38Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                <g id="ear1">
+                                    <path class="cls-1" d="M25.16,33c3.3.14,8.16,9.39,12.19,12.61a75.86,75.86,0,0,1,3.39-10.25C36.45,32.24,29.47,29.47,25.16,33Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-7" d="M30.39,34.65c1.84-.18,4.62,4.84,6.79,6a37,37,0,0,1,1.33-4.17C36.28,35.24,32.64,33,30.39,34.65Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                <g id="ear2">
+                                    <path class="cls-1" d="M47,11.3c-.35,6.07-.68,11.71-1,16.7,2.63,1.84,6.89.28,9.51-2.36C53.25,22.77,49.66,14.5,47,11.3Z" transform="translate(-11.11 -11.3)"/>
+                                    <path class="cls-7" d="M48.73,16.89c-.19,3.26-.36,6.29-.53,9,1.41,1,3.7.15,5.11-1.27C52.06,23,50.14,18.6,48.73,16.89Z" transform="translate(-11.11 -11.3)"/>
+                                </g>
+                                </g>
+                            </svg>                          
+                        </div>
+                    </transition>
+                    <transition name="fadeleft">
+                        <div class="wool" v-show="currect == 4">
+                            <svg id="wool" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 92.17 92.17">
+                                <circle class="cls-1" cx="46.08" cy="46.08" r="46.08"/>
+                                <path class="cls-2" d="M77.64,12.89C54.28,11.36,36,20.06,24.78,27.72A88.56,88.56,0,0,0,5.41,45.33h0c0,.27-.06.53-.09.8a.81.81,0,0,0,.26.36.84.84,0,0,0,1.18-.17,86.71,86.71,0,0,1,19-17.23C37,21.45,55.34,12.72,78.87,14.66a.82.82,0,0,0,.72-.32Q78.63,13.59,77.64,12.89Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M86.44,21.74a.82.82,0,0,0,.49-.2c-.4-.49-.81-1-1.23-1.44C56.3,21.46,36.09,32,24.29,40.72c-11,8.09-16.79,15.86-18.42,18.22q.18,1,.41,2a.81.81,0,0,0,.53-.35c.06-.09,5.88-9.24,18.56-18.55C37,33.43,57.13,22.94,86.44,21.74Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M63.91,94.88C52.1,57.34,57.92,26,58,25.72a.84.84,0,0,0-1.65-.32c-.06.32-6,32,6,69.93.54-.13,1.08-.28,1.62-.44C63.91,94.89,63.91,94.89,63.91,94.88Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M32.27,36.93a.84.84,0,0,0-.83-.85.86.86,0,0,0-.85.83c0,.38-.45,37.8,11.94,59,.63.12,1.26.23,1.9.33a.83.83,0,0,0-.1-.56C31.81,75,32.26,37.31,32.27,36.93Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M61.34,5.66c-19.52.68-38.71,11.05-45,14.75-.75.86-1.47,1.74-2.15,2.65a.83.83,0,0,0,.5.19.84.84,0,0,0,.46-.14c.25-.16,25.06-16.28,49.24-15.8a.83.83,0,0,0,.8-.59C64,6.31,62.66,6,61.34,5.66Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M20,46a.84.84,0,1,0-1.66-.26c0,.32-4.49,31.07,15.73,47.7,1.13.45,2.27.87,3.44,1.23a.83.83,0,0,0-.3-.94C15.39,78.16,20,46.28,20,46Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M95.22,37c-.18-.58-.37-1.15-.58-1.72-25.16-5.54-38.72,2.5-39.28,2.85a.84.84,0,1,0,.88,1.43c.14-.08,13.71-8.15,38.55-2.54A.82.82,0,0,0,95.22,37Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M56,51.91a.84.84,0,1,0,.48,1.61c.22-.06,22.46-6.52,40.31,1a.85.85,0,0,0,.25.05c0-.57.1-1.13.12-1.71C78.87,45.3,57,51.64,56,51.91Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M75.62,49.78a.84.84,0,0,0-1,.57A47.4,47.4,0,0,1,57.71,74.29a.84.84,0,0,0,.94,1.39A48.23,48.23,0,0,0,76.19,50.82.84.84,0,0,0,75.62,49.78Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M88.64,50.81a.82.82,0,0,0-.86.83A51.88,51.88,0,0,1,62.67,91.94a.84.84,0,0,0,.43,1.56.83.83,0,0,0,.43-.12A53.68,53.68,0,0,0,89.46,51.67.84.84,0,0,0,88.64,50.81Z" transform="translate(-5.1 -4.53)"/>
+                                <path class="cls-2" d="M53.37,96.64a.81.81,0,0,0,0-.23c-15-45.63-6.41-66.5-6.32-66.7A.84.84,0,1,0,45.47,29c-.37.86-8.92,21.49,6.19,67.64C52.23,96.68,52.8,96.66,53.37,96.64Z" transform="translate(-5.1 -4.53)"/>
+                            </svg>
+                            <svg id="woolline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.39 52.85">
+                                <path class="cls-1" d="M2.29,55.7l1.13.09C6.66,50.46,22.53,50,26,46c13-15-.21-30.24,6.18-35.82,9.6-8.39,19.48-5.52,19.6-5.56a.91.91,0,0,0,.59-1.1A.82.82,0,0,0,51.28,3,29,29,0,0,0,30,10c-6.38,5.61,7,23-6,35-3.95,3.65-18.62,4.33-21.92,9.75a.83.83,0,0,0,.19.94Z" transform="translate(-2.01 -2.94)"/>
+                            </svg>
+                        </div>
+                    </transition>
+                </div>
             </div>
         </div>
     </div>
-    <script src="./main.js"></script>
 </body>
 </html>

@@ -5,7 +5,6 @@ body {
     height: 100%;
     font-size: 20px;
     overflow: hidden;
-    /* background-color: rgb(240, 246, 248); */
     background-color: #f8f8f0;
     font-family: PingFang SC,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
     -webkit-transform: translate3d(0,0,0);
@@ -13,6 +12,33 @@ body {
     -ms-transform: translate3d(0,0,0);
     -o-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);    
+}
+#loading {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: 1s;
+    width: 25rem;
+    animation: loading 1s backwards;
+}
+@keyframes loading {
+    from{opacity: 0}
+    to{opacity: 1}
+}
+#loading p,#loading img{
+    display: inline-block;
+}
+#loading p {
+    color: #8e6c44;
+    margin: 0;
+    line-height: 3rem;
+    font-weight: 300;
+}
+#content {
+    transition: 1s;
+    opacity: 0;
 }
 
 .navbar {
@@ -25,7 +51,6 @@ body {
 }
 .navbutton {
     cursor: pointer;
-    z-index: 1;
     overflow: hidden;
     position: relative;
     width: 12rem;
@@ -281,6 +306,9 @@ body {
     width: 60rem;
     height: 23rem;  
 }
+.pages .pagecontent4 .mylinks a {
+    text-decoration: none;
+}
 .pages .pagecontent4 .mylinks .link {
     width: 18rem;
     height: 23rem;
@@ -417,41 +445,26 @@ body {
     width: 110rem;
     height: 55rem;
 }
-.bg1 .ball1{
+.bg1 {
+    animation:  huerotate 10s linear infinite;
+}
+.bg1 .pawprint1{
     position: absolute;
     top: -3rem;
     left: 3rem;
-    width: 12rem;
-    height: 12rem;
-    border-radius: 6rem;
-    background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+    width: 35rem;
 }
-.bg1 .ball2{
-    position: absolute;
-    top: -3rem;
-    right: 2rem;
-    width: 18rem;
-    height: 18rem;
-    border-radius: 9rem;
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+.bg1 .pawprint1 .cls-1{
+    fill: #ffefe5;
 }
-.bg1 .ball3{
+.bg1 .pawprint2{
     position: absolute;
-    bottom: 4rem;
-    right: 14rem;
-    width: 16rem;
-    height: 16rem;
-    border-radius: 8rem;
-    background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);
+    bottom: 10rem;
+    right: 10rem;
+    width: 25rem;
 }
-.bg1 .ball4{
-    position: absolute;
-    bottom: 6rem;
-    left: 12rem;
-    width: 20rem;
-    height: 20rem;
-    border-radius: 10rem;
-    background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+.bg1 .pawprint2 .cls-1{
+    fill: #eeffff;
 }
 
 @keyframes huerotate{
@@ -489,57 +502,104 @@ body {
     font-size: 10rem;
     color:#e8ffbd;
 }
-.bg2cat {
-    width: 100rem;
+.bg2ear svg .cls-1 {
+    fill: #f7931e;
+}
+.bg2ear svg .cls-2 {
+    fill: #f15a24;
+}
+.bg2paws svg .cls-1 {
+    fill: #f7931e;
+}
+.bg2paws svg .cls-2 {
+    fill: #ffb660;
+}
+.bg2ear {
     position: absolute;
-    top: -10rem;
-    left: 50rem;
+    top: 4rem;
+    left: 37rem;
+    width: 35rem;
+    animation: bg2ear 1s backwards 1s;
+}
+.bg2paws {
+    position: fixed;
+    top: 32rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 68rem;
+}
+#leftpaw {
+    animation: leftpaw 1s backwards 1s;
+}
+#rightpaw {
+    animation: rightpaw 1s backwards 1s;
+}
+@keyframes rightpaw {
+    from{
+        opacity: 0;
+        transform: translateX(100%) 
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0) 
+    }
+}
+@keyframes leftpaw {
+    from{
+        opacity: 0;
+        transform: translateX(-100%) 
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0) 
+    }
+}
+@keyframes bg2ear {
+    from{
+        opacity: 0;
+        top: 7rem;  
+    }
+    to{
+        opacity: 1;
+        top: 4rem;
+    }
 }
 
-.bg3 .block1{
+.bg3 .ball1{
     position: absolute;
-    top: -15rem;
-    left: -15rem;
-    width: 80rem;
-    height: 30rem;
-    transform:rotate(-25deg);
-    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%);
+    top: -3rem;
+    left: 3rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 6rem;
+    background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
 }
-.bg3 .block2{
+.bg3 .ball2{
     position: absolute;
-    top: -15rem;
-    right: -7rem;
-    width: 80rem;
+    top: -3rem;
+    right: 2rem;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 9rem;
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+.bg3 .ball3{
+    position: absolute;
+    bottom: 4rem;
+    right: 14rem;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 8rem;
+    background-image: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);
+}
+.bg3 .ball4{
+    position: absolute;
+    bottom: 6rem;
+    left: 12rem;
+    width: 20rem;
     height: 20rem;
-    transform:rotate(7deg);
-    background-image: linear-gradient(-225deg, #7DE2FC 0%, #B9B6E5 100%);
-}
-.bg3 .block3{
-    position: absolute;
-    bottom: -10rem;
-    right: -20rem;
-    width: 30rem;
-    height: 60rem;
-    transform:rotate(20deg);
-    background-image: linear-gradient(-225deg, #B6CEE8 0%, #F578DC 100%);
-}
-.bg3 .block4{
-    position: absolute;
-    bottom: -12rem;
-    right: -5rem;
-    width: 67rem;
-    height: 20rem;
-    transform:rotate(-15deg);
-    background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
-}
-.bg3 .block5{
-    position: absolute;
-    bottom: -12rem;
-    left: -10rem;
-    width: 67rem;
-    height: 20rem;
-    transform:rotate(20deg);
-    background-image: linear-gradient(to top, #c71d6f 0%, #d09693 100%);
+    border-radius: 10rem;
+    background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
 }
 
 .cat .cls-1 {
