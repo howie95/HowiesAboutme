@@ -141,6 +141,7 @@ body {
     overflow: hidden;
 }
 .page {
+    overflow-x: auto;
     position: absolute;
     width: 60rem;
     height: 30rem;
@@ -152,9 +153,67 @@ body {
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 .pages .pagecontent1 {
-    overflow-y: scroll;
-    width: 58rem;
+    width: 50rem;
     height: 28rem;
+}
+.pages .pagecontent1 section{
+    padding-left: 1rem;
+}
+.pagecontent1 h1,.pagecontent1 h2,.pagecontent1 h3,.pagecontent1 span,.pagecontent1 p,.pagecontent1 a{
+    font-weight: 300;
+}
+.pages .pagecontent1 h1 {
+    color: #9b2596;
+    position: relative;
+    left: -4rem;
+    font-size: 2rem;
+}
+.pages .pagecontent1 h1::before{
+    position: relative;
+    top: 0.3rem;
+    content: '>';
+    font-size: 4rem;
+    display: inline;
+    color: #d57eeb;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+.pages .pagecontent1 h1::after{
+    content: '';
+    display: inline-block;
+    height: 0.3rem;
+    width: 1.3rem;
+    background-color: #9b2596;
+    animation: texticon 1s step-end infinite;
+}
+@keyframes texticon{
+    0% {
+        opacity: 0;
+    }
+    50% {
+    opacity: 1;
+    }
+    100% {
+    opacity: 0;
+    }
+}
+.pages .pagecontent1 h2 {
+    color: #c23863;
+    font-size: 1.5rem;
+}
+.pages .pagecontent1 h2::before{
+    content: '$';
+    font-size: 1.5rem;
+    display: inline;
+    color: #e1d6c1;
+    margin-right: 0.5rem;
+}
+.pages .pagecontent1 span,.pages .pagecontent1 p{
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-right: 0.5rem;
+    color: #3c260e;
 }
 .pages .pagecontent2 {
     width: 58rem;
@@ -249,7 +308,6 @@ body {
     box-shadow: none;
 }
 .pages .pagecontent3 {
-    overflow-y: scroll;
     width: 60rem;
     height: 28rem;
 }
@@ -281,16 +339,56 @@ body {
 }
 .pages .pagecontent3 .works>div {
     float: right;
-    width: 18rem;
+    width: 17rem;
+    padding-right: 1rem;
     height: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+.pages .pagecontent3 .works p {
+    color: white;
+    font-weight: 300;
+    margin: 0;
+    width: 15rem;
+    font-size: 1rem;
+}
+.pages .pagecontent3 .works h2 {
+    color: white;
+    font-weight: 300;
+    margin: 0;
+    text-align: right;
+}
+.pages .pagecontent3 .works span {
+    display: inline-block;
+    background-color: white;
+    padding: 0 0.5rem;
+    height: 1.2rem;
+    border-radius: 0.6rem;
+    font-size: 0.8rem;
+    margin: 0;
+}
+.workinfo1 {
+    background-image: linear-gradient(to left, #a1c4fd 0%, #c2e9fb 100%);
+}
+.workinfo2 {
+    background-image: linear-gradient(to right, #efa6ff 0%, #ffb199 100%);
+}
+.workinfo3 {
+    background-image: linear-gradient(to right, #fdfbfb 0%, #ebedee 100%);
+}
+.pages .pagecontent3 .workinfo3 p ,.pages .pagecontent3 .workinfo3 h2 {
+    color: #795e5e;
+}
+.workinfo4 {
+    background-image: linear-gradient(to right, #7a001b 0%, #680d21 100%);
 }
 .workinfo5 {
     background-color: #010005;
 }
-.workinfo5 h2,.workinfo5 p {
-    color: white;
-    font-weight: 300;
-}
+
+
 
 #page4 {
     background: none;
@@ -314,9 +412,36 @@ body {
     height: 23rem;
     border-radius: 1.5rem;
 }
+.pages .pagecontent4 .mylinks .link:hover svg {
+    animation: strokeanimate 2s;
+}
+@keyframes strokeanimate {
+    0% {
+        stroke-dasharray: 0, 140;
+    }
+    100% {
+        stroke-dasharray: 140, 140;
+    }
+}
 .pages .pagecontent4 .mylinks .link .linkicon {
     width: 18rem;
     height: 17rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pages .pagecontent4 .mylinks .link .linkicon svg {
+    width: 10rem;
+}
+.pages .pagecontent4 .mylinks .link .linkicon .cls-1, .pages .pagecontent4 .mylinks .link .linkicon .cls-2 {
+    fill: none;
+}
+
+.pages .pagecontent4 .mylinks .link .linkicon .cls-2 {
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 .pages .pagecontent4 .mylinks .link .linkinfo {
     width: 18rem;

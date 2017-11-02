@@ -21,10 +21,10 @@ window.onload = function(){
             scrollNav(e){
                 if(this.scrollLock == true){return}
                 this.scrollLock = true
-                let pagecontent = document.getElementById("page"+this.currect).getElementsByClassName("pagecontent")[0]
-                let scrollTop = pagecontent.scrollTop
-                let scrollHeight = pagecontent.scrollHeight
-                let clientHeight = pagecontent.clientHeight
+                let currectpage = document.getElementById("page"+this.currect)
+                let scrollTop = currectpage.scrollTop
+                let scrollHeight = currectpage.scrollHeight
+                let clientHeight = currectpage.clientHeight
                 e = e || window.event;  
                 if (e.wheelDelta) {  //webkit           
                     if (e.wheelDelta > 0) { 
