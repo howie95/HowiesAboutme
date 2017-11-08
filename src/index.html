@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <div id="loading">
-            <p>你好，我是王子浩~</p>
+            <p>你好，我是火星人~</p>
             <img src="./img/3.gif" alt="meow">
             <p>页面加载中...</p>
         </div>
@@ -22,7 +22,7 @@
                     <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55.97 57.5">
                         <path d="M60.64,55.67a17.82,17.82,0,1,0-17.28,0A28.7,28.7,0,0,0,24.1,77.12a1.76,1.76,0,0,0-.09.46s0,.08,0,.12a1.78,1.78,0,1,0,3.56,0,25,25,0,0,1,48.84,0,1.78,1.78,0,0,0,3.56,0,28.64,28.64,0,0,0-19.33-22ZM37.74,40A14.26,14.26,0,1,1,52,54.33,14.31,14.31,0,0,1,37.74,40Z" transform="translate(-24 -22)"/>
                     </svg>
-                    <span class="navspan">个人介绍</span>
+                    <span class="navspan">{{content.navtitle[0]}}</span>
                     <transition :name="navtrans">
                     <div class="navbg navbg1" v-show="currect == 1"></div>
                     </transition>
@@ -32,7 +32,7 @@
                         <path d="M89.64,48.38a4,4,0,0,0-1-1.41L63.33,24.18a4,4,0,0,0-5.39,6L80,50,58,69.83a4,4,0,1,0,5.39,6L88.67,53a4,4,0,0,0,1-4.65Z" transform="translate(-11.33 -23.15)"/>
                         <path d="M21.36,50l22-19.84a4,4,0,1,0-5.39-6L12.7,47a4.12,4.12,0,0,0,0,6.07L38,75.82a4,4,0,1,0,5.39-6Z" transform="translate(-11.33 -23.15)"/>
                     </svg>
-                    <span class="navspan">能力清单</span>
+                    <span class="navspan">{{content.navtitle[1]}}</span>
                     <transition :name="navtrans">
                     <div class="navbg navbg2" v-show="currect == 2"></div>
                     </transition>
@@ -41,7 +41,7 @@
                     <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58 58">
                         <path d="M27.72,75.32A15.48,15.48,0,0,0,38.5,80,11.86,11.86,0,0,0,47,76.6l8.82-8.89.08-.07,0,0h0L74.63,48.72a7.29,7.29,0,0,0,1.84-3.09l4.26-15.42A12.75,12.75,0,0,0,81,28.34,6.35,6.35,0,0,0,74.65,22a12.87,12.87,0,0,0-2.1.34l-15.37,4a7.29,7.29,0,0,0-3.09,1.84L26.43,56.1c-5,5-4.46,13.47,1.29,19.22ZM52,36.87a14.79,14.79,0,0,0,1.3,4.76L36.14,58.77a8.84,8.84,0,0,1,1.79-9.07l0,0,0,0L52,35.52c0,.45,0,.89,0,1.35Zm2.21,6.41a16.41,16.41,0,0,0,2.4,3.13,16.18,16.18,0,0,0,3.7,2.7L43,66.4a12.54,12.54,0,0,1-6.12-5.82l17.3-17.3ZM62,50a14.45,14.45,0,0,0,5.2,1.09l-14,14.07a8.7,8.7,0,0,1-8.31,1.92ZM73.45,25.86a9.11,9.11,0,0,1,1.23-.23,2.73,2.73,0,0,1,2.7,2.72,9,9,0,0,1-.18,1l-1.91,6.91a8.59,8.59,0,0,1-8.58-8.65l6.75-1.77ZM64.91,28.1a10.11,10.11,0,0,0,3,7,10.34,10.34,0,0,0,6.83,3.08L73,44.67a3.55,3.55,0,0,1-.71,1.24c-3.64,2.6-9.23,1.83-13.11-2.05C55,39.75,54.4,33.73,57.57,30.14a3.6,3.6,0,0,1,.65-.28l6.7-1.76ZM29,58.66,32,55.59c0,.41,0,.8,0,1.22A16,16,0,0,0,47.39,71l-3,3a8.26,8.26,0,0,1-5.89,2.33A12.53,12.53,0,0,1,26.65,65.2,8.3,8.3,0,0,1,29,58.66Z" transform="translate(-23 -22)"/>
                     </svg>
-                    <span class="navspan">项目、作品</span>
+                    <span class="navspan">{{content.navtitle[2]}}</span>
                     <transition :name="navtrans">
                     <div class="navbg navbg3" v-show="currect == 3"></div>
                     </transition>
@@ -50,7 +50,7 @@
                     <svg class="navicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.44 57.66">
                         <path d="M74.23,43.82a16,16,0,0,0-7.7-13.67.89.89,0,0,0-.9,1.53,14.21,14.21,0,0,1,6.84,12.13.88.88,0,1,0,1.76,0ZM62.76,29.43a.89.89,0,0,0-.66-1.07A11.45,11.45,0,0,0,59,27.94a.89.89,0,0,0,0,1.78h0a9.85,9.85,0,0,1,2.67.37.88.88,0,0,0,1.06-.66ZM32.68,78.1,46.9,63.72a4.44,4.44,0,0,0,.78-1.05,21.25,21.25,0,0,0,10.84,3A21.81,21.81,0,1,0,40.3,55.47a4.61,4.61,0,0,0-.87.69L25.21,70.54a5.39,5.39,0,0,0,0,7.56,5.25,5.25,0,0,0,7.48,0Zm7.78-34.27A18.06,18.06,0,1,1,58.52,62.08,18.18,18.18,0,0,1,40.46,43.82ZM27.7,75.58a1.84,1.84,0,0,1,0-2.52L41.92,58.68a1.91,1.91,0,0,1,.21-.18s.4.05,1.41,1.07S44.58,61,44.59,61a.79.79,0,0,1-.18.23L30.19,75.58a1.75,1.75,0,0,1-2.47,0l0,0Z" transform="translate(-23.66 -22)"/>
                     </svg>                      
-                    <span class="navspan">了解更多</span>
+                    <span class="navspan">{{content.navtitle[3]}}</span>
                     <transition :name="navtrans">
                     <div class="navbg navbg4" v-show="currect == 4"></div>
                     </transition>
@@ -60,19 +60,31 @@
                     <transition :name="pagetrans">
                         <div id="page1" class="page" v-show="currect == 1">
                             <div class="pagecontent pagecontent1">
-                                <h1>Hello , i'm world.</h1>
-                                <section>
-                                    <h2>Sub-title</h2>
+                                <section class="leftarea">
+                                    <div class="img"></div>
                                     <section>
-                                        <span>Name :</span><p>Hello World</p>
+                                        <h1>{{content.page1.titleh1}}</h1>
+                                        <div v-for='item in content.page1.titleintro'>
+                                            <span>{{item.span}}</span><p>{{item.p}}</p>
+                                        </div>
                                     </section>
-                                    <section>
-                                        <span>Class :</span><p>howie95.com</p>
+                                </section>
+                                <section class="rightarea">
+                                    <section class="style1">
+                                        <h2>{{content.page1.section1.h2}}</h2>
+                                        <p>{{content.page1.section1.p}}</p>
                                     </section>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat dolore earum quisquam fuga neque pariatur, commodi minus vitae quos labore sit eligendi voluptas. Doloribus nesciunt dicta, iste incidunt accusamus dolore.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat dolore earum quisquam fuga neque pariatur, commodi minus vitae quos labore sit eligendi voluptas. Doloribus nesciunt dicta, iste incidunt accusamus dolore.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat dolore earum quisquam fuga neque pariatur, commodi minus vitae quos labore sit eligendi voluptas. Doloribus nesciunt dicta, iste incidunt accusamus dolore.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat dolore earum quisquam fuga neque pariatur, commodi minus vitae quos labore sit eligendi voluptas. Doloribus nesciunt dicta, iste incidunt accusamus dolore.</p>
+                                    <section class="style2">
+                                        <h2>{{content.page1.section2.h2}}</h2>
+                                        <div v-for='item in content.page1.section2.contents'>
+                                            <h3>{{item.h3}}</h3><span>{{item.span}}</span>
+                                            <p>{{item.p}}</p>
+                                        </div>
+                                    </section>
+                                    <section class="style3">
+                                        <h2>{{content.page1.section3.h2}}</h2>
+                                        <p v-for='(item,index) in content.page1.section3.contents'>{{index+1}}. {{item}}</p>
+                                    </section>
                                 </section>
                             </div>
                         </div>
@@ -80,52 +92,12 @@
                     <transition :name="pagetrans">
                         <div id="page2" class="page" v-show="currect == 2">
                             <div class="pagecontent pagecontent2">
-                                <div class="ability1">
+                                <div v-for="(item,index) in content.page2.contents" :class="'ability'+(index+1)">
                                     <div class="abicon">
                                     </div>
                                     <div class="abinfo">
-                                        <h2>HTML+CSS</h2>
-                                        <p>可以熟练的进行前端页面设计布局、页面重构，熟悉HTML5、CSS3新特性，并会加以运用。</p>
-                                    </div>
-                                </div>
-                                <div class="ability2">
-                                    <div class="abicon">
-                                    </div>
-                                    <div class="abinfo">
-                                        <h2>JAVASCRIPT</h2>
-                                        <p>熟悉原生JS的使用，会在项目中使用ES6/ES7新语法，并在项目中使用BABEL进行转换。</p>
-                                    </div>
-                                </div>
-                                <div class="ability3">
-                                    <div class="abicon">
-                                    </div>
-                                    <div class="abinfo">
-                                        <h2>NODEJS</h2>
-                                        <p>能够运用nodejs进行web开发，会使用express.js、pug.js等框架及工具。</p>
-                                    </div>
-                                </div>
-                                <div class="ability4">
-                                    <div class="abicon">
-                                    </div>
-                                    <div class="abinfo">
-                                        <h2>VUEJS</h2>
-                                        <p>深入学习过渐进式框架vue.js，有结合nodejs、vuejs及其插件开发SAP应用的经验。</p>
-                                    </div>
-                                </div>
-                                <div class="ability5">
-                                    <div class="abicon">
-                                    </div>
-                                    <div class="abinfo">
-                                        <h2>PS/AI</h2>
-                                        <p>熟练使用Photoshop、Illustrator进行图像处理、绘制矢量图形，有制作svg动画的经验。</p>
-                                    </div>
-                                </div>
-                                <div class="ability6">
-                                    <div class="abicon">
-                                    </div>
-                                    <div class="abinfo">
-                                        <h2>DESIGN</h2>
-                                        <p>喜欢追随流行的UI设计潮流，对网页设计元素进行重构，优化用户体验与观感。</p>
+                                        <h2>{{item.h2}}</h2>
+                                        <p>{{item.p}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -152,79 +124,20 @@
                     <transition :name="pagetrans">
                         <div id="page3" class="page" v-show="currect == 3">
                             <div class="pagecontent pagecontent3">
-                                <span>2017</span>
-                                <a href="https://github.com/howie95/helpmechoose" target="_blank">
-                                    <div class="works">
-                                        <img src="./img/work0.jpg" alt="work0">
-                                        <div class="workinfo0">
+                                <section v-for="(item,index) in content.page3" :class="'section'+(index+1)">
+                                    <span>{{item.span}}</span>
+                                    <div v-for="(item,index) in item.works" class="works">
+                                        <a v-if="item.href" :href="item.href" target="_blank"></a>
+                                        <img :src="item.imgsrc">
+                                        <div :class="'workinfo'+index">
                                             <div class="tags">
-                                                <span>WIP</span>
-                                                <span>微信小程序</span>
+                                                <span v-for="item in item.tags">{{item}}</span>
                                             </div>
-                                            <h2>帮我做决定</h2>
-                                            <p>拯救选择困难症患者于水火之中，两难选择、买哪一件东西、吃哪家餐厅都不会再困扰我了，简单实用的小程序。</p>
+                                            <h2>{{item.h2}}</h2>
+                                            <p>{{item.p}}</p>
                                         </div>
                                     </div>
-                                </a>
-                                <a href="https://github.com/howie95/lather" target="_blank">
-                                    <div class="works">
-                                        <img src="./img/work1.jpg" alt="work1">
-                                        <div class="workinfo1">
-                                            <div class="tags">
-                                                <span>WIP</span>
-                                                <span>Vue</span>
-                                            </div>
-                                            <h2>Lather</h2>
-                                            <p>一个简单的博客系统，支持日期归档/标签分类/单页面/markdown等功能，前端：vue+vue-router，后端：nodejs+express+mongoose，数据库：mongodb。</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="works">
-                                    <img src="./img/work2.jpg" alt="work2">
-                                    <div class="workinfo2">
-                                        <div class="tags">
-                                            <span>SUSPEND</span>
-                                            <span>微信小程序</span>
-                                        </div>
-                                        <h2>枕边明月光</h2>
-                                        <p>一个简单易用的入睡电台，设定喜好及时间即可播放音乐，没有其他繁杂的功能。</p>
-                                        <p>*暂时因个人小程序号功能限制无法访问</p>
-                                    </div>
-                                </div>
-                                <a href="https://github.com/howie95/vue-typingit" target="_blank">
-                                    <div class="works">
-                                        <img src="./img/work3.gif" alt="work3">
-                                        <div class="workinfo3">
-                                            <div class="tags">
-                                                <span>WIP</span>
-                                                <span>Vue插件</span>
-                                            </div>
-                                            <h2>Vue-TypingIt</h2>
-                                            <p>模拟文字更新的打字/删除效果的小插件，在data里进行简单的配置并在模板中引用即可使用，支持单条、多条、动态更新的文字列表</p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <span>2016</span>
-                                <div class="works">
-                                    <img src="./img/work4.jpg" alt="work4">
-                                    <div class="workinfo4">
-                                        <div class="tags">
-                                            <span>设计</span>
-                                        </div>
-                                        <h2>19酒商城</h2>
-                                        <p>一个线上酒水商城的微信公众号的LOGO、标识、部分VI设计，包括在线商城界面的设计、制作。</p>
-                                    </div>
-                                </div>
-                                <div class="works">
-                                    <img src="./img/work5.jpg" alt="work5">
-                                    <div class="workinfo5">
-                                        <div class="tags">
-                                            <span>设计</span>
-                                        </div>
-                                        <h2>Roar社区</h2>
-                                        <p>2016挑战杯大学生创业大赛参赛作品Roar社区，负责相关概念、网页部分、标识、LOGO的设计与制作。</p>
-                                    </div>
-                                </div>
+                                </section>
                             </div>
                         </div>
                     </transition>
@@ -249,7 +162,7 @@
                                                     </svg>
                                             </div>
                                             <div class="linkinfo">
-                                                <h2>我的博客</h2>
+                                                <h2>{{content.page4.link1.h2}}</h2>
                                                 <p>https://howie95.com/blog/</p>
                                             </div>
                                         </div>
@@ -270,7 +183,7 @@
                                                     </svg>
                                             </div>
                                             <div class="linkinfo">
-                                                <h2>摄影剪辑</h2>
+                                                <h2>{{content.page4.link2.h2}}</h2>
                                                 <p>https://photo.howie95.com/   </p>
                                             </div>
                                         </div>
