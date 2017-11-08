@@ -369,6 +369,12 @@ body {
     font-size: 0.8rem;
     margin: 0;
 }
+.workinfo0 {
+    background-color: #fffbcf;
+}
+.pages .pagecontent3 .workinfo0 p ,.pages .pagecontent3 .workinfo0 h2 {
+    color: #6c4420;
+}
 .workinfo1 {
     background-image: linear-gradient(to left, #a1c4fd 0%, #c2e9fb 100%);
 }

@@ -25,7 +25,7 @@ window.onload = function(){
                 let scrollTop = currectpage.scrollTop
                 let scrollHeight = currectpage.scrollHeight
                 let clientHeight = currectpage.clientHeight
-                e = e || window.event;  
+                e = e || window.event
                 if (e.wheelDelta) {  //webkit           
                     if (e.wheelDelta > 0) { 
                         if(this.currect == 1){
@@ -65,22 +65,22 @@ window.onload = function(){
                         }
                     }  
                 }
-                setTimeout(()=>{this.scrollLock = false},200)  
+                setTimeout(()=>{this.scrollLock = false},300)  
             }
         },
         mounted(){
             if (document.addEventListener) {
-                document.addEventListener('DOMMouseScroll', this.scrollNav, false);  
+                document.addEventListener('DOMMouseScroll', this.scrollNav, false)
             }  
-            window.onmousewheel = document.onmousewheel = this.scrollNav; 
+            window.onmousewheel = document.onmousewheel = this.scrollNav
             setTimeout(()=>{
                 document.getElementById('loading').style.opacity = 0
                 document.getElementById('content').style.opacity = 1
-            }, 2000);
+            }, 2000)
             setTimeout(()=>{
                 let i = document.getElementById('loading')
                 i.parentNode.removeChild(i)
-            }, 3000);
+            }, 3000)
         }
     })
 }
