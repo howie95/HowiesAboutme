@@ -291,6 +291,7 @@ window.onload = function(){
                     this.pagetrans = 'pagedown'
                 }
                 this.currect = index
+                setTimeout(()=>{this.scrollLock = false},1000)
             },
             switchLang(){
                 this.switched = !this.switched
@@ -348,7 +349,6 @@ window.onload = function(){
                         }
                     }  
                 }
-                setTimeout(()=>{this.scrollLock = false},1000)  
             }
         },
         mounted(){
