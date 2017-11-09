@@ -55,150 +55,157 @@
                     <div class="navbg navbg4" v-show="currect == 4"></div>
                     </transition>
                 </div>
+                <div class="lang" @click="switchLang">
+                    <span>中</span>
+                    <span>En</span>
+                    <div :class="[switched ? 'switch' : '', 'circle']">
+                        <div></div>
+                    </div>
+                </div>
             </div>
-                <div class="pages">
-                    <transition :name="pagetrans">
-                        <div id="page1" class="page" v-show="currect == 1">
-                            <div class="pagecontent pagecontent1">
-                                <section class="leftarea">
-                                    <div class="img"></div>
-                                    <section>
-                                        <h1>{{content.page1.titleh1}}</h1>
-                                        <div v-for='item in content.page1.titleintro'>
-                                            <span>{{item.span}}</span><p>{{item.p}}</p>
-                                        </div>
-                                    </section>
+            <div class="pages">
+                <transition :name="pagetrans">
+                    <div id="page1" class="page" v-show="currect == 1">
+                        <div class="pagecontent pagecontent1">
+                            <section class="leftarea">
+                                <div class="img"></div>
+                                <section>
+                                    <h1>{{content.page1.titleh1}}</h1>
+                                    <div v-for='item in content.page1.titleintro'>
+                                        <span>{{item.span}}</span><p>{{item.p}}</p>
+                                    </div>
                                 </section>
-                                <section class="rightarea">
-                                    <section class="style1">
-                                        <h2>{{content.page1.section1.h2}}</h2>
-                                        <p>{{content.page1.section1.p}}</p>
-                                    </section>
-                                    <section class="style2">
-                                        <h2>{{content.page1.section2.h2}}</h2>
-                                        <div v-for='item in content.page1.section2.contents'>
-                                            <h3>{{item.h3}}</h3><span>{{item.span}}</span>
-                                            <p>{{item.p}}</p>
-                                        </div>
-                                    </section>
-                                    <section class="style3">
-                                        <h2>{{content.page1.section3.h2}}</h2>
-                                        <p v-for='(item,index) in content.page1.section3.contents'>{{index+1}}. {{item}}</p>
-                                    </section>
+                            </section>
+                            <section class="rightarea">
+                                <section class="style1">
+                                    <h2>{{content.page1.section1.h2}}</h2>
+                                    <p>{{content.page1.section1.p}}</p>
                                 </section>
+                                <section class="style2">
+                                    <h2>{{content.page1.section2.h2}}</h2>
+                                    <div v-for='item in content.page1.section2.contents'>
+                                        <h3>{{item.h3}}</h3><span>{{item.span}}</span>
+                                        <p>{{item.p}}</p>
+                                    </div>
+                                </section>
+                                <section class="style3">
+                                    <h2>{{content.page1.section3.h2}}</h2>
+                                    <p v-for='(item,index) in content.page1.section3.contents'>{{index+1}}. {{item}}</p>
+                                </section>
+                            </section>
+                        </div>
+                    </div>
+                </transition>
+                <transition :name="pagetrans">
+                    <div id="page2" class="page" v-show="currect == 2">
+                        <div class="pagecontent pagecontent2">
+                            <div v-for="(item,index) in content.page2.contents" :class="'ability'+(index+1)">
+                                <div class="abicon">
+                                </div>
+                                <div class="abinfo">
+                                    <h2>{{item.h2}}</h2>
+                                    <p>{{item.p}}</p>
+                                </div>
                             </div>
                         </div>
-                    </transition>
-                    <transition :name="pagetrans">
-                        <div id="page2" class="page" v-show="currect == 2">
-                            <div class="pagecontent pagecontent2">
-                                <div v-for="(item,index) in content.page2.contents" :class="'ability'+(index+1)">
-                                    <div class="abicon">
-                                    </div>
-                                    <div class="abinfo">
+                        <div class="bg2paws">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.77 15">
+                                <g id="leftpaw">
+                                    <path class="cls-1" d="M1.95,13a12.34,12.34,0,0,1-2-6.82C.12,4.89.95,1.32,2.65.85a3.68,3.68,0,0,1,.91,0s.22-1,1.85-.83c.6.07.87.94.87.94S8.28.16,9,2A1.36,1.36,0,0,1,8.9,3s.91,0,.83,1.85-2,4.45-2,4.45S7.9,13.13,6.9,14,4.59,16.19,1.95,13Z" transform="translate(0.05 0)"/>
+                                    <path class="cls-2" d="M5.95.91A1.6,1.6,0,0,0,5.1,2.15a.15.15,0,0,0,.3,0,1.3,1.3,0,0,1,.7-1A.15.15,0,1,0,5.95.89Z" transform="translate(0.05 0)"/>
+                                    <path class="cls-2" d="M8.62,2.8A2.86,2.86,0,0,0,6.9,5.41a.15.15,0,1,0,.3,0A2.56,2.56,0,0,1,8.78,3c.18-.08,0-.33-.15-.26Z" transform="translate(0.05 0)"/>
+                                    <path class="cls-2" d="M3.24.91a2.12,2.12,0,0,0-.68,1.22c0,.19.25.27.29.08a1.86,1.86,0,0,1,.6-1.09C3.59,1,3.38.78,3.24.91Z" transform="translate(0.05 0)"/>
+                                    <path class="cls-2" d="M5.32,11.48a2.86,2.86,0,0,0,2.42-2,.15.15,0,1,0-.29-.09,2.56,2.56,0,0,1-2.2,1.8C5.05,11.19,5.15,11.51,5.32,11.48Z" transform="translate(0.05 0)"/>
+                                </g>
+                                <g id="rightpaw">
+                                    <path class="cls-1" d="M97.66,13a12.34,12.34,0,0,0,2-6.77c-.12-1.32-1-4.89-2.65-5.36a3.68,3.68,0,0,0-.91,0s-.22-1-1.85-.83c-.6.07-.87.94-.87.94s-2-.8-2.68,1a1.36,1.36,0,0,0,0,.91s-.91,0-.83,1.85,2,4.45,2,4.45-.14,3.91.83,4.81S95.08,16.19,97.66,13Z" transform="translate(0.05 0)"/>
+                                    <path class="cls-2" d="M93.52,1.21a1.3,1.3,0,0,1,.7,1c0,.19.31.19.3,0a1.6,1.6,0,0,0-.85-1.3c-.16-.11-.31.15-.15.26Z" transform="translate(0.05 0)"/>
+                                    <path class="cls-2" d="M91,3a2.56,2.56,0,0,1,1.58,2.35.15.15,0,1,0,.3,0A2.85,2.85,0,0,0,91,2.8C90.87,2.72,90.72,3,91,3Z" transform="translate(0.05 0)"/>
+                                    <path class="cls-2" d="M96.21,1a1.86,1.86,0,0,1,.6,1.09c0,.19.32.11.29-.08A2.12,2.12,0,0,0,96.42.91c-.14-.13-.35.08-.21.21Z" transform="translate(0.05 0)"/>
+                                    <path class="cls-2" d="M94.34,11.48a2.86,2.86,0,0,1-2.42-2,.15.15,0,1,1,.29-.09h0a2.56,2.56,0,0,0,2.21,1.78c.2,0,.1.32-.07.29Z" transform="translate(0.05 0)"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </transition>
+                <transition :name="pagetrans">
+                    <div id="page3" class="page" v-show="currect == 3">
+                        <div class="pagecontent pagecontent3">
+                            <section v-for="(item,index) in content.page3" :class="'section'+(index+1)">
+                                <span>{{item.span}}</span>
+                                <div v-for="(item,index) in item.works" class="works">
+                                    <a v-if="item.href" :href="item.href" target="_blank"></a>
+                                    <img :src="item.imgsrc">
+                                    <div :class="'workinfo'+index">
+                                        <div class="tags">
+                                            <span v-for="item in item.tags">{{item}}</span>
+                                        </div>
                                         <h2>{{item.h2}}</h2>
                                         <p>{{item.p}}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="bg2paws">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.77 15">
-                                    <g id="leftpaw">
-                                        <path class="cls-1" d="M1.95,13a12.34,12.34,0,0,1-2-6.82C.12,4.89.95,1.32,2.65.85a3.68,3.68,0,0,1,.91,0s.22-1,1.85-.83c.6.07.87.94.87.94S8.28.16,9,2A1.36,1.36,0,0,1,8.9,3s.91,0,.83,1.85-2,4.45-2,4.45S7.9,13.13,6.9,14,4.59,16.19,1.95,13Z" transform="translate(0.05 0)"/>
-                                        <path class="cls-2" d="M5.95.91A1.6,1.6,0,0,0,5.1,2.15a.15.15,0,0,0,.3,0,1.3,1.3,0,0,1,.7-1A.15.15,0,1,0,5.95.89Z" transform="translate(0.05 0)"/>
-                                        <path class="cls-2" d="M8.62,2.8A2.86,2.86,0,0,0,6.9,5.41a.15.15,0,1,0,.3,0A2.56,2.56,0,0,1,8.78,3c.18-.08,0-.33-.15-.26Z" transform="translate(0.05 0)"/>
-                                        <path class="cls-2" d="M3.24.91a2.12,2.12,0,0,0-.68,1.22c0,.19.25.27.29.08a1.86,1.86,0,0,1,.6-1.09C3.59,1,3.38.78,3.24.91Z" transform="translate(0.05 0)"/>
-                                        <path class="cls-2" d="M5.32,11.48a2.86,2.86,0,0,0,2.42-2,.15.15,0,1,0-.29-.09,2.56,2.56,0,0,1-2.2,1.8C5.05,11.19,5.15,11.51,5.32,11.48Z" transform="translate(0.05 0)"/>
-                                    </g>
-                                    <g id="rightpaw">
-                                        <path class="cls-1" d="M97.66,13a12.34,12.34,0,0,0,2-6.77c-.12-1.32-1-4.89-2.65-5.36a3.68,3.68,0,0,0-.91,0s-.22-1-1.85-.83c-.6.07-.87.94-.87.94s-2-.8-2.68,1a1.36,1.36,0,0,0,0,.91s-.91,0-.83,1.85,2,4.45,2,4.45-.14,3.91.83,4.81S95.08,16.19,97.66,13Z" transform="translate(0.05 0)"/>
-                                        <path class="cls-2" d="M93.52,1.21a1.3,1.3,0,0,1,.7,1c0,.19.31.19.3,0a1.6,1.6,0,0,0-.85-1.3c-.16-.11-.31.15-.15.26Z" transform="translate(0.05 0)"/>
-                                        <path class="cls-2" d="M91,3a2.56,2.56,0,0,1,1.58,2.35.15.15,0,1,0,.3,0A2.85,2.85,0,0,0,91,2.8C90.87,2.72,90.72,3,91,3Z" transform="translate(0.05 0)"/>
-                                        <path class="cls-2" d="M96.21,1a1.86,1.86,0,0,1,.6,1.09c0,.19.32.11.29-.08A2.12,2.12,0,0,0,96.42.91c-.14-.13-.35.08-.21.21Z" transform="translate(0.05 0)"/>
-                                        <path class="cls-2" d="M94.34,11.48a2.86,2.86,0,0,1-2.42-2,.15.15,0,1,1,.29-.09h0a2.56,2.56,0,0,0,2.21,1.78c.2,0,.1.32-.07.29Z" transform="translate(0.05 0)"/>
-                                    </g>
-                                </svg>
-                            </div>
+                            </section>
                         </div>
-                    </transition>
-                    <transition :name="pagetrans">
-                        <div id="page3" class="page" v-show="currect == 3">
-                            <div class="pagecontent pagecontent3">
-                                <section v-for="(item,index) in content.page3" :class="'section'+(index+1)">
-                                    <span>{{item.span}}</span>
-                                    <div v-for="(item,index) in item.works" class="works">
-                                        <a v-if="item.href" :href="item.href" target="_blank"></a>
-                                        <img :src="item.imgsrc">
-                                        <div :class="'workinfo'+index">
-                                            <div class="tags">
-                                                <span v-for="item in item.tags">{{item}}</span>
-                                            </div>
-                                            <h2>{{item.h2}}</h2>
-                                            <p>{{item.p}}</p>
+                    </div>
+                </transition>
+                <transition :name="pagetrans">
+                    <div id="page4" class="page" v-show="currect == 4">
+                        <div class="pagecontent pagecontent4">
+                            <div class="mylinks">
+                                <a href="https://howie95.com/blog/" target="_blank">
+                                    <div class="link link1">
+                                        <div class="linkicon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                                <g id="size">
+                                                    <rect class="cls-1" width="50" height="50"/>
+                                                </g>
+                                                <g id="blog">
+                                                    <path class="cls-2" d="M45,12.27V38.83A6.18,6.18,0,0,1,38.83,45H11.17A6.18,6.18,0,0,1,5,38.83V11.17A6.18,6.18,0,0,1,11.17,5H36.75"/>
+                                                    <line class="cls-2" x1="13" y1="24.5" x2="27.5" y2="24.5"/>
+                                                    <line class="cls-2" x1="13" y1="30.5" x2="38" y2="30.5"/>
+                                                    <line class="cls-2" x1="13" y1="36.5" x2="38" y2="36.5"/>
+                                                    <path class="cls-2" d="M46.28,4.51a1.5,1.5,0,0,0-.67-1.17l-1-.66L43.6,2a1.62,1.62,0,0,0-2.22.57L31.4,18l-1.51,7.37L36,20.95,46,5.6a1.78,1.78,0,0,0,.29-1.09"/>
+                                                </g>
+                                                </svg>
+                                        </div>
+                                        <div class="linkinfo">
+                                            <h2>{{content.page4.link1.h2}}</h2>
+                                            <p>https://howie95.com/blog/</p>
                                         </div>
                                     </div>
-                                </section>
+                                </a>
+                                <a href="https://photo.howie95.com/" target="_blank">
+                                    <div class="link link2">
+                                        <div class="linkicon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                                                <g id="size">
+                                                    <rect class="cls-1" width="50" height="50"/>
+                                                </g>
+                                                <g id="photo">
+                                                    <path class="cls-2" d="M45,19V38.83A6.18,6.18,0,0,1,38.83,45H11.17A6.18,6.18,0,0,1,5,38.83V11.17A6.18,6.18,0,0,1,11.17,5H33.5"/>
+                                                    <path class="cls-2" d="M47.5,11.5a7,7,0,1,1-7-7,7,7,0,0,1,7,7"/>
+                                                    <path class="cls-2" d="M44.5,11.5a4,4,0,1,1-4-4,4,4,0,0,1,4,4"/>
+                                                    <path class="cls-2" d="M5.27,33.59A11.56,11.56,0,0,1,12,31.5a19.32,19.32,0,0,1,4,.77A11.46,11.46,0,0,1,27,24.5a11.37,11.37,0,0,1,11.32,9s5.18,0,6.68,4"/>
+                                                </g>
+                                                </svg>
+                                        </div>
+                                        <div class="linkinfo">
+                                            <h2>{{content.page4.link2.h2}}</h2>
+                                            <p>https://photo.howie95.com/   </p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="link link3"></div>
+                            </div>
+                            <div class="otherlinks">
+                                <a>QQ : 1096046927</a>
+                                <a href="mailto:lawslies@outlook.com">MAIL : lawslies@outlook.com</a>
+                                <a href="https://github.com/howie95/" target="_blank">Github : howie95</a>
                             </div>
                         </div>
-                    </transition>
-                    <transition :name="pagetrans">
-                        <div id="page4" class="page" v-show="currect == 4">
-                            <div class="pagecontent pagecontent4">
-                                <div class="mylinks">
-                                    <a href="https://howie95.com/blog/" target="_blank">
-                                        <div class="link link1">
-                                            <div class="linkicon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                                                    <g id="size">
-                                                        <rect class="cls-1" width="50" height="50"/>
-                                                    </g>
-                                                    <g id="blog">
-                                                        <path class="cls-2" d="M45,12.27V38.83A6.18,6.18,0,0,1,38.83,45H11.17A6.18,6.18,0,0,1,5,38.83V11.17A6.18,6.18,0,0,1,11.17,5H36.75"/>
-                                                        <line class="cls-2" x1="13" y1="24.5" x2="27.5" y2="24.5"/>
-                                                        <line class="cls-2" x1="13" y1="30.5" x2="38" y2="30.5"/>
-                                                        <line class="cls-2" x1="13" y1="36.5" x2="38" y2="36.5"/>
-                                                        <path class="cls-2" d="M46.28,4.51a1.5,1.5,0,0,0-.67-1.17l-1-.66L43.6,2a1.62,1.62,0,0,0-2.22.57L31.4,18l-1.51,7.37L36,20.95,46,5.6a1.78,1.78,0,0,0,.29-1.09"/>
-                                                    </g>
-                                                    </svg>
-                                            </div>
-                                            <div class="linkinfo">
-                                                <h2>{{content.page4.link1.h2}}</h2>
-                                                <p>https://howie95.com/blog/</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="https://photo.howie95.com/" target="_blank">
-                                        <div class="link link2">
-                                            <div class="linkicon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                                                    <g id="size">
-                                                        <rect class="cls-1" width="50" height="50"/>
-                                                    </g>
-                                                    <g id="photo">
-                                                        <path class="cls-2" d="M45,19V38.83A6.18,6.18,0,0,1,38.83,45H11.17A6.18,6.18,0,0,1,5,38.83V11.17A6.18,6.18,0,0,1,11.17,5H33.5"/>
-                                                        <path class="cls-2" d="M47.5,11.5a7,7,0,1,1-7-7,7,7,0,0,1,7,7"/>
-                                                        <path class="cls-2" d="M44.5,11.5a4,4,0,1,1-4-4,4,4,0,0,1,4,4"/>
-                                                        <path class="cls-2" d="M5.27,33.59A11.56,11.56,0,0,1,12,31.5a19.32,19.32,0,0,1,4,.77A11.46,11.46,0,0,1,27,24.5a11.37,11.37,0,0,1,11.32,9s5.18,0,6.68,4"/>
-                                                    </g>
-                                                    </svg>
-                                            </div>
-                                            <div class="linkinfo">
-                                                <h2>{{content.page4.link2.h2}}</h2>
-                                                <p>https://photo.howie95.com/   </p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div class="link link3"></div>
-                                </div>
-                                <div class="otherlinks">
-                                    <a>QQ : 1096046927</a>
-                                    <a href="mailto:lawslies@outlook.com">MAIL : lawslies@outlook.com</a>
-                                    <a href="https://github.com/howie95/" target="_blank">Github : howie95</a>
-                                </div>
-                            </div>
-                        </div>
-                    </transition>
-                </div>
+                    </div>
+                </transition>
+            </div>
             <div class="background">
                 <transition name="fadeleft">
                     <div class="bg bg2" v-show="currect == 2">

@@ -278,6 +278,8 @@ window.onload = function(){
                     },
                 },
             },
+            contentSwitcher:[],
+            switched:false,
         },
         methods:{
             clickNav(index){
@@ -290,9 +292,14 @@ window.onload = function(){
                 }
                 this.currect = index
             },
+            switchLang(){
+                this.switched = !this.switched
+                this.contentSwitcher = this.content
+                this.content = this.contentEn
+                this.contentEn = this.contentSwitcher
+            },
             scrollNav(e){
                 if(this.scrollLock == true){return}
-                this.scrollLock = true
                 let currectpage = document.getElementById("page"+this.currect)
                 let scrollTop = currectpage.scrollTop
                 let scrollHeight = currectpage.scrollHeight
@@ -305,6 +312,7 @@ window.onload = function(){
                             return
                         }
                         if(scrollTop == 0){
+                            this.scrollLock = true
                             this.clickNav(this.currect-1)
                         }
                     }  
@@ -314,16 +322,18 @@ window.onload = function(){
                             return
                         }
                         if(scrollTop + clientHeight + 2 > scrollHeight){
+                            this.scrollLock = true
                             this.clickNav(this.currect+1)
                         }
                     }  
-                } else if (e.detail) {  //fFirefox  
+                } else if (e.detail) {  //Firefox  
                     if (e.detail> 0) {  
                         if(this.currect == 1){
                             this.scrollLock = false
                             return
                         }
                         if(scrollTop == 0){
+                            this.scrollLock = true
                             this.clickNav(this.currect-1)
                         }
                     }  
@@ -333,6 +343,7 @@ window.onload = function(){
                             return
                         }
                         if(scrollTop + clientHeight + 2 > scrollHeight){
+                            this.scrollLock = true
                             this.clickNav(this.currect+1)
                         }
                     }  
