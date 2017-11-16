@@ -328,7 +328,7 @@ window.onload = function(){
                         }
                     }  
                 } else if (e.detail) {  //Firefox  
-                    if (e.detail> 0) {  
+                    if (e.detail< 0) {  
                         if(this.currect == 1){
                             this.scrollLock = false
                             return
@@ -338,7 +338,7 @@ window.onload = function(){
                             this.clickNav(this.currect-1)
                         }
                     }  
-                    if (e.detail< 0) {  
+                    if (e.detail> 0) {  
                         if(this.currect == 4){
                             this.scrollLock = false
                             return
